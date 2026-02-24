@@ -161,7 +161,7 @@ const BackgroundAnimation = () => {
                 width: '100%',
                 height: '100%',
                 zIndex: -10,
-                background: '#000000', // Deep black background
+                background: '#0a0a0e', // Premium dark theme background
                 pointerEvents: 'none'
             }}
         />

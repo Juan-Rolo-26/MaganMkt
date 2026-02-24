@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../assets/logos/logo.png';
+import logo from '../assets/logos/logo_new.jpg';
 import {
   ArrowRightIcon,
   InstagramIcon,

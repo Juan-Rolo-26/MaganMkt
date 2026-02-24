@@ -3,6 +3,7 @@ import { motion as Motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import MetricsBar from '../components/MetricsBar';
+import WorkProcess from '../components/WorkProcess';
 
 const pageTransition = {
   initial: { opacity: 0, y: 18 },
@@ -33,8 +34,9 @@ const Home = () => {
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
     >
       <Hero />
-      <Services />
       <MetricsBar />
+      <WorkProcess />
+      <Services />
     </Motion.div>
   );
 };

@@ -9,7 +9,9 @@ import ContactPage from './pages/ContactPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import LegalNotice from './pages/LegalNotice';
 import CookiesPolicy from './pages/CookiesPolicy';
+import ServicePage from './pages/ServicePage';
 import { AnimatePresence } from 'framer-motion';
+import './new-theme.css';
 
 const routeMeta = {
   '/': {
@@ -79,11 +81,12 @@ function App() {
     upsertMeta('meta[property="og:description"]', 'property', 'og:description', meta.description);
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', meta.title);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', meta.description);
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', '/logo.png');
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', '/logo.png');
   }, [location.pathname]);
 
   return (
     <>
-      <BackgroundAnimation />
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -93,6 +96,7 @@ function App() {
           <Route path="/privacidad" element={<PrivacyPolicy />} />
           <Route path="/legal" element={<LegalNotice />} />
           <Route path="/cookies" element={<CookiesPolicy />} />
+          <Route path="/servicios/:slug" element={<ServicePage />} />
         </Routes>
       </AnimatePresence>
       <Footer />

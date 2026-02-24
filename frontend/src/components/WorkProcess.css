@@ -1,0 +1,258 @@
+.work-process-section {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.work-process-wheel-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 500px;
+    padding-bottom: 20px;
+    margin-bottom: -150px;
+    overflow: hidden;
+}
+
+.work-process-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    max-width: 700px;
+    margin-bottom: 220px;
+}
+
+.process-pill {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.process-heading {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+.carousel-wheel {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: wheel-spin 60s linear infinite;
+
+    --wheel-radius: -800px;
+    z-index: 1;
+    will-change: transform;
+}
+
+@media (max-width: 1400px) {
+    .work-process-wheel-container {
+        padding-top: 500px;
+        margin-bottom: -100px;
+    }
+
+    .carousel-wheel {
+        --wheel-radius: -700px;
+    }
+
+    .work-process-center {
+        margin-bottom: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .work-process-wheel-container {
+        padding-top: 450px;
+        margin-bottom: -80px;
+    }
+
+    .carousel-wheel {
+        --wheel-radius: -600px;
+    }
+
+    .work-process-center {
+        margin-bottom: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-process-wheel-container {
+        padding-top: 350px;
+        margin-bottom: -40px;
+    }
+
+    .carousel-wheel {
+        --wheel-radius: -450px;
+    }
+
+    .work-process-center {
+        margin-bottom: 100px;
+    }
+}
+
+.carousel-card {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 28px;
+    background-color: #111;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -65px 0 0 -65px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+    .carousel-card {
+        width: 100px;
+        height: 100px;
+        margin: -50px 0 0 -50px;
+        border-radius: 20px;
+    }
+
+    .process-heading {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.carousel-card:hover .carousel-img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@keyframes wheel-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Steps Grid */
+.work-process-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 5%;
+    margin-top: 0;
+    z-index: 20;
+    position: relative;
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    .work-process-steps {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+}
+
+.step-card {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    background-color: #222;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.step-pill {
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--brand-red);
+    background-color: rgba(227, 28, 37, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.step-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.step-icon {
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .step-card {
+        padding: 30px 20px;
+    }
+
+    .step-title {
+        font-size: 1.25rem;
+    }
+
+    .step-desc {
+        font-size: 0.95rem;
+    }
+}

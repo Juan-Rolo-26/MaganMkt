@@ -76,11 +76,9 @@ export const StarIcon = ({ size = 18 }) => (
 
 export const HandshakeIcon = ({ size = 30 }) => (
   <svg {...baseProps} style={iconSize(size)}>
-    <path d="M4 12l3-3 3 3-3 3-3-3z" />
-    <path d="M20 12l-3-3-3 3 3 3 3-3z" />
-    <path d="m10 10 2-2a2.8 2.8 0 0 1 4 0l1 1" />
-    <path d="m14 14-2 2a2.8 2.8 0 0 1-4 0l-1-1" />
-    <path d="m9.5 12.5 3 3" />
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    <path d="M12 5 9.04 9.2a2.5 2.5 0 0 0 0 2.5v0a2.5 2.5 0 0 0 2.5 2.5h0c.42 0 .83-.16 1.13-.44l3.19-2.91" />
+    <path d="M12.92 12.33 11 13a2.5 2.5 0 0 1-3.1-1.1v0a2.5 2.5 0 0 1 .4-3.1L12 5" />
   </svg>
 );
 
@@ -115,11 +113,7 @@ export const TargetIcon = ({ size = 28 }) => (
 
 export const ChartIcon = ({ size = 28 }) => (
   <svg {...baseProps} style={iconSize(size)}>
-    <path d="M4 19h16" />
-    <path d="M7 15V9" />
-    <path d="M12 15V5" />
-    <path d="M17 15v-3" />
-    <path d="m4 9 4-4 4 3 8-4" />
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
   </svg>
 );
 

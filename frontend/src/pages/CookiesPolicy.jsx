@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion as Motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CookiesPolicy = () => {
   useEffect(() => {
@@ -15,6 +16,9 @@ const CookiesPolicy = () => {
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
     >
       <article className="policy-panel">
+        <Link to="/" className="btn-back-policy">
+          ← Volver al Inicio
+        </Link>
         <h1 className="text-gradient policy-title">Politica de Cookies</h1>
 
         <div className="policy-content">
