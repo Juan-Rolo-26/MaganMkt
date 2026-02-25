@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Search, ShoppingCart, Link as LinkIcon, Rocket } from 'lucide-react';
 import './WorkProcess.css';
 
@@ -36,14 +36,14 @@ const steps = [
     },
     {
         step: "Paso 2",
-        title: "Contenido Estratégico + Ads",
+        title: "Contenido Estrategico + Anuncios",
         description: "Diseñamos piezas creativas que captan la atención y las impulsamos con campañas de publicidad optimizadas para maximizar tu retorno de inversión (ROI).",
         icon: <ShoppingCart size={22} />
     },
     {
         step: "Paso 3",
         title: "Ecosistema de Retención",
-        description: "Implementamos flujos de Email Marketing y automatizaciones para transformar a tus seguidores en una comunidad orgánica fiel que compra recurrentemente.",
+        description: "Implementamos flujos de correo electronico y automatizaciones para transformar a tus seguidores en una comunidad organica fiel que compra recurrentemente.",
         icon: <LinkIcon size={22} />
     },
     {
@@ -55,27 +55,19 @@ const steps = [
 ];
 
 const WorkProcess = () => {
-    const cardVariants = {
-        hidden: { opacity: 0, y: 50, scale: 0.95 },
-        visible: (i) => ({
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: {
-                delay: i * 0.15,
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1]
-            }
-        })
-    };
+    const sectionRef = useRef(null);
+    const stepsRef = useRef(null);
+    const sectionInView = useInView(sectionRef, { once: true, amount: 0.15 });
+    const stepsInView = useInView(stepsRef, { once: true, amount: 0.1 });
 
     return (
-        <section className="work-process-section">
+        <section className="work-process-section" ref={sectionRef}>
+            {/* ── WHEEL + CENTER TITLE ─────────────────────────── */}
             <div className="work-process-wheel-container">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.92 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    initial={{ opacity: 0, scale: 0.7, rotate: -30 }}
+                    animate={sectionInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                    transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
                     className="carousel-wheel"
                 >
                     {brands.map((brand, i) => {
@@ -95,40 +87,79 @@ const WorkProcess = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                    animate={sectionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                    transition={{ duration: 0.95, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     className="work-process-center"
                 >
-                    <span className="process-pill">Proceso de trabajo</span>
-                    <h2 className="process-heading">Así trabajan las marcas que<br />escalan con nosotros</h2>
+                    <motion.span
+                        className="process-pill"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ delay: 0.55, duration: 0.6 }}
+                    >
+                        Proceso de trabajo
+                    </motion.span>
+                    <motion.h2
+                        className="process-heading"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ delay: 0.65, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        Así trabajan las marcas que<br />escalan con nosotros
+                    </motion.h2>
                 </motion.div>
             </div>
 
-            <motion.div
-                className="work-process-steps"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-            >
+            {/* ── STEP CARDS ───────────────────────────────────── */}
+            <div className="work-process-steps" ref={stepsRef}>
                 {steps.map((item, index) => (
                     <motion.div
-                        custom={index}
-                        variants={cardVariants}
                         className="step-card"
                         key={index}
-                        whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                        initial={{ opacity: 0, y: 70, x: index % 2 === 0 ? -30 : 30, scale: 0.93 }}
+                        animate={stepsInView ? { opacity: 1, y: 0, x: 0, scale: 1 } : {}}
+                        transition={{
+                            duration: 0.85,
+                            delay: index * 0.15,
+                            ease: [0.22, 1, 0.36, 1],
+                        }}
+                        whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.3 } }}
                     >
-                        <span className="step-pill">{item.step}</span>
+                        <motion.span
+                            className="step-pill"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={stepsInView ? { opacity: 1, x: 0 } : {}}
+                            transition={{ delay: 0.2 + index * 0.15, duration: 0.5 }}
+                        >
+                            {item.step}
+                        </motion.span>
                         <h3 className="step-title">
-                            <span className="step-icon">{item.icon}</span>
+                            <motion.span
+                                className="step-icon"
+                                initial={{ scale: 0, rotate: -30 }}
+                                animate={stepsInView ? { scale: 1, rotate: 0 } : {}}
+                                transition={{
+                                    type: 'spring',
+                                    stiffness: 200,
+                                    delay: 0.3 + index * 0.15,
+                                }}
+                            >
+                                {item.icon}
+                            </motion.span>
                             {item.title}
                         </h3>
-                        <p className="step-desc">{item.description}</p>
+                        <motion.p
+                            className="step-desc"
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={stepsInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.38 + index * 0.15, duration: 0.6 }}
+                        >
+                            {item.description}
+                        </motion.p>
                     </motion.div>
                 ))}
-            </motion.div>
+            </div>
         </section>
     );
 };

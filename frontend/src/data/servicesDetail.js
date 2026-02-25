@@ -35,7 +35,7 @@ export const servicesDetail = {
             },
             {
                 title: "Plan de acción personalizado",
-                desc: "Creamos un roadmap estratégico con tácticas específicas para cada etapa."
+                desc: "Creamos una hoja de ruta estrategica con tacticas especificas para cada etapa."
             }
         ],
         ctaText: "Solicitá tu diagnóstico gratuito",
@@ -50,7 +50,7 @@ export const servicesDetail = {
         benefitsTitle: "¿Por qué tu empresa necesita una estrategia de marketing digital sólida?",
         benefits: [
             "Bajo rendimiento en SEO: Tu sitio no aparece donde debería en los resultados de búsqueda.",
-            "Campañas de PPC ineficientes: Gastás mucho pero obtenés pocos resultados.",
+            "Campañas de pago por clic (PPC) ineficientes: Gastas mucho pero obtenes pocos resultados.",
             "Gestión de redes sociales sin impacto: Tus publicaciones no generan interacción ni atraen clientes.",
         ],
         howTitle: "Nuestros Servicios de Marketing Digital",
@@ -68,8 +68,8 @@ export const servicesDetail = {
                 desc: "Creamos contenido que conecta y estrategias que convierten."
             },
             {
-                title: "Email Marketing",
-                desc: "Campañas segmentadas que convierten leads en clientes."
+                title: "Correo electronico",
+                desc: "Campanas segmentadas que convierten contactos potenciales en clientes."
             }
         ],
         ctaText: "Solicitá tu consultoría digital ahora",
@@ -77,7 +77,7 @@ export const servicesDetail = {
         color: "#ff003c"
     },
     "branding-y-diseno": {
-        title: "Branding y Diseño Estratégico",
+        title: "Identidad de Marca y Diseno Estrategico",
         subtitle: "Creamos Marcas que Inspiran y Conectan",
         description:
             "Tu marca es mucho más que colores y formas. Es la manera en que te perciben tus clientes y cómo te destacás en un mercado competitivo. En MagnaMKT, construimos marcas memorables que hablan por vos y conectan con tu audiencia. En MagnaMKT no solo hacemos marketing; construimos alianzas estratégicas. Nos enfocamos en entender tu negocio, identificar oportunidades y ejecutar soluciones que generen impacto real. Con más de 50 clientes satisfechos y una metodología orientada a resultados, ayudamos a empresas como la tuya a alcanzar y superar sus objetivos. Cada marca es única y ponemos el corazón para reflejarlo.",
@@ -90,7 +90,7 @@ export const servicesDetail = {
             "Enfoque personalizado: cada marca es única y trabajamos para reflejarlo.",
             "Resultados comprobados: más de 50 empresas confían en nosotros para destacar.",
         ],
-        howTitle: "¿Qué incluye nuestro servicio de Branding y Diseño?",
+        howTitle: "¿Que incluye nuestro servicio de Identidad de Marca y Diseno?",
         howSteps: [
             {
                 title: "Creación de Identidad Visual",
@@ -101,7 +101,7 @@ export const servicesDetail = {
                 desc: "Documentamos cómo debe usarse tu marca para garantizar coherencia visual en cada canal."
             },
             {
-                title: "Rebranding Estratégico",
+                title: "Renovacion Estrategica de Marca",
                 desc: "Renovamos marcas para alinearlas con los nuevos objetivos de tu negocio."
             },
             {
@@ -240,7 +240,7 @@ export const servicesDetail = {
         benefits: [
             "Aumentá tu visibilidad: atraé más tráfico orgánico con contenido optimizado para buscadores.",
             "Construí confianza: posicionate como un referente confiable en tu industria.",
-            "Generá más leads: convertí tu contenido en una herramienta para captar clientes.",
+            "Genera mas contactos potenciales: converti tu contenido en una herramienta para captar clientes.",
         ],
         howTitle: "¿Qué incluye nuestro servicio de Marketing de Contenidos?",
         howSteps: [
@@ -257,7 +257,7 @@ export const servicesDetail = {
                 desc: "Creamos contenido visual que conecta y transmite tu mensaje."
             },
             {
-                title: "Copywriting Persuasivo",
+                title: "Redaccion Persuasiva",
                 desc: "Texto que convierte visitantes en clientes."
             }
         ],

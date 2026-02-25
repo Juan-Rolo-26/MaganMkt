@@ -65,8 +65,9 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: -40, opacity: 0, filter: 'blur(8px)' }}
+        animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         style={{
           position: "fixed",
           top: 0,
@@ -159,7 +160,7 @@ const Navbar = () => {
               letterSpacing: "3px",
               display: window.innerWidth < 768 ? "none" : "block"
             }}>
-              MENU
+              MENÚ
             </span>
             <div style={{
               width: "35px",

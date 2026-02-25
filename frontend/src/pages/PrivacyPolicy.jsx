@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
           <p>
             Si tiene alguna pregunta sobre esta politica de privacidad, contactenos en:
             <br />
-            <strong>Email:</strong> diegob@magnamkt.com
+            <strong>Correo electronico:</strong> diegob@magnamkt.com
             <br />
             <strong>Telefono:</strong> +54 9 341 642-2073
           </p>
