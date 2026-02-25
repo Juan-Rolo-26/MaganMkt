@@ -62,41 +62,19 @@ const WorkProcess = () => {
 
     return (
         <section className="work-process-section" ref={sectionRef}>
-            {/* ── WHEEL + CENTER TITLE ─────────────────────────── */}
-            <div className="work-process-wheel-container">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.7, rotate: -30 }}
-                    animate={sectionInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-                    transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                    className="carousel-wheel"
-                >
-                    {brands.map((brand, i) => {
-                        const angle = (i * 360) / brands.length;
-                        return (
-                            <div
-                                key={i}
-                                className="carousel-card"
-                                style={{
-                                    transform: `rotate(${angle}deg) translateY(var(--wheel-radius))`,
-                                }}
-                            >
-                                <img src={brand.img} alt={`Marca ${i + 1}`} className="carousel-img" />
-                            </div>
-                        );
-                    })}
-                </motion.div>
-
+            {/* ── MARQUEE + CENTER TITLE ─────────────────────────── */}
+            <div className="work-process-marquee-container">
                 <motion.div
                     initial={{ opacity: 0, y: 40, scale: 0.9 }}
                     animate={sectionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                    transition={{ duration: 0.95, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.95, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                     className="work-process-center"
                 >
                     <motion.span
                         className="process-pill"
                         initial={{ opacity: 0, y: 15 }}
                         animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ delay: 0.55, duration: 0.6 }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
                     >
                         Proceso de trabajo
                     </motion.span>
@@ -104,10 +82,30 @@ const WorkProcess = () => {
                         className="process-heading"
                         initial={{ opacity: 0, y: 20 }}
                         animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ delay: 0.65, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     >
                         Así trabajan las marcas que<br />escalan con nosotros
                     </motion.h2>
+                </motion.div>
+
+                <motion.div
+                    className="marquee-wrapper"
+                    initial={{ opacity: 0 }}
+                    animate={sectionInView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.6, duration: 1 }}
+                >
+                    <div className="marquee-content">
+                        {brands.map((brand, i) => (
+                            <div key={`brand1-${i}`} className="marquee-item">
+                                <img src={brand.img} alt={`Marca ${i + 1}`} className="marquee-img" />
+                            </div>
+                        ))}
+                        {brands.map((brand, i) => (
+                            <div key={`brand2-${i}`} className="marquee-item">
+                                <img src={brand.img} alt={`Marca ${i + 1}`} className="marquee-img" />
+                            </div>
+                        ))}
+                    </div>
                 </motion.div>
             </div>
 

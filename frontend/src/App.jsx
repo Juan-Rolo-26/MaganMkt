@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -99,6 +100,7 @@ function App() {
           <Route path="/servicios/:slug" element={<ServicePage />} />
         </Routes>
       </AnimatePresence>
+      <FloatingWhatsApp />
       <Footer />
     </>
   );

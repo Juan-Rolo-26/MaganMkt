@@ -12,16 +12,15 @@
     overflow: hidden;
 }
 
-.work-process-wheel-container {
+.work-process-marquee-container {
     position: relative;
     width: 100%;
-    height: auto;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding-top: 500px;
-    padding-bottom: 20px;
-    margin-bottom: -150px;
+    padding-top: 40px;
+    padding-bottom: 60px;
     overflow: hidden;
 }
 
@@ -33,7 +32,7 @@
     text-align: center;
     z-index: 10;
     max-width: 700px;
-    margin-bottom: 220px;
+    margin-bottom: 40px;
 }
 
 .process-pill {
@@ -56,115 +55,107 @@
     letter-spacing: -0.02em;
 }
 
-.carousel-wheel {
+/* MARQUEE */
+.marquee-wrapper {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    white-space: nowrap;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: '';
     position: absolute;
-    bottom: -150px;
-    left: 50%;
-    width: 2px;
-    height: 2px;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
+.marquee-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    animation: wheel-spin 60s linear infinite;
-
-    --wheel-radius: -800px;
-    z-index: 1;
-    will-change: transform;
+    gap: 40px;
+    padding-right: 40px;
+    /* Crucial para alinear perfectamente con el translateX */
+    animation: scroll-left 40s linear infinite;
+    width: max-content;
 }
 
-@media (max-width: 1400px) {
-    .work-process-wheel-container {
-        padding-top: 500px;
-        margin-bottom: -100px;
-    }
-
-    .carousel-wheel {
-        --wheel-radius: -700px;
-    }
-
-    .work-process-center {
-        margin-bottom: 180px;
-    }
+.marquee-content:hover {
+    animation-play-state: paused;
 }
 
-@media (max-width: 1024px) {
-    .work-process-wheel-container {
-        padding-top: 450px;
-        margin-bottom: -80px;
-    }
-
-    .carousel-wheel {
-        --wheel-radius: -600px;
-    }
-
-    .work-process-center {
-        margin-bottom: 140px;
-    }
-}
-
-@media (max-width: 768px) {
-    .work-process-wheel-container {
-        padding-top: 350px;
-        margin-bottom: -40px;
-    }
-
-    .carousel-wheel {
-        --wheel-radius: -450px;
-    }
-
-    .work-process-center {
-        margin-bottom: 100px;
-    }
-}
-
-.carousel-card {
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    border-radius: 28px;
+.marquee-item {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
     background-color: #111;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: -65px 0 0 -65px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-    .carousel-card {
-        width: 100px;
-        height: 100px;
-        margin: -50px 0 0 -50px;
-        border-radius: 20px;
-    }
-
-    .process-heading {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-    }
+.marquee-item:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
-.carousel-img {
+.marquee-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.85;
-    transition: opacity 0.3s ease, transform 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
-.carousel-card:hover .carousel-img {
+.marquee-item:hover .marquee-img {
     opacity: 1;
-    transform: scale(1.05);
 }
 
-@keyframes wheel-spin {
-    from {
-        transform: rotate(0deg);
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
     }
 
-    to {
-        transform: rotate(360deg);
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .work-process-heading {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .marquee-wrapper::before,
+    .marquee-wrapper::after {
+        width: 60px;
+    }
+
+    .marquee-item {
+        width: 120px;
+        height: 120px;
+        border-radius: 16px;
     }
 }
 

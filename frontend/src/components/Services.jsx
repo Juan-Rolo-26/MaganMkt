@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import {
   ArrowRightIcon,
@@ -134,6 +134,7 @@ const counterVariants = {
 // ── ServiceCard ───────────────────────────────────────────────────────────────
 const ServiceCard = ({ service, index }) => {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
   const Icon = service.Icon;
 
   return (
@@ -142,6 +143,7 @@ const ServiceCard = ({ service, index }) => {
       variants={cardVariants}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
+      onClick={() => navigate(`/servicios/${service.slug}`)}
       whileHover={{ y: -6, transition: { duration: 0.3 } }}
       style={{
         position: "relative",
@@ -287,8 +289,7 @@ const ServiceCard = ({ service, index }) => {
 
       {/* CTA */}
       <div style={{ marginTop: "auto" }}>
-        <Link
-          to={`/servicios/${service.slug}`}
+        <div
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -312,7 +313,7 @@ const ServiceCard = ({ service, index }) => {
             }}
           />
           <ArrowRightIcon size={12} />
-        </Link>
+        </div>
       </div>
     </Motion.article>
   );
