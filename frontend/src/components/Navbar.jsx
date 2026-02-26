@@ -104,13 +104,15 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* CENTRO: INDICADOR DINÁMICO */}
+        {/* CENTRO: INDICADOR DINÁMICO — oculto en mobile */}
         <div style={{
-          flex: 1.5, // Le damos un poco más de espacio al centro para el texto largo
+          flex: 1.5,
           display: "flex",
           justifyContent: "center",
           opacity: (scrolled || isInternalPage) ? 1 : 0.8,
-          transition: "opacity 0.4s ease"
+          transition: "opacity 0.4s ease",
+          visibility: window.innerWidth <= 768 ? "hidden" : "visible",
+          pointerEvents: window.innerWidth <= 768 ? "none" : "auto",
         }}>
           <div style={{
             padding: "8px 24px",

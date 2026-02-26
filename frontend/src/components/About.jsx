@@ -205,8 +205,8 @@ const About = () => {
             <section className="pa-quote" ref={quote.ref}>
                 <motion.div
                     className="pa-quote-bg"
-                    initial={{ scale: 1.12, opacity: 0 }}
-                    animate={quote.inView ? { scale: 1, opacity: 1 } : {}}
+                    initial={{ scale: 1.05, opacity: 0 }}
+                    animate={quote.inView ? { scale: 1, opacity: 0.3 } : {}}
                     transition={{ duration: 1.5, ease: 'easeOut' }}
                 />
                 <div className="pa-container">

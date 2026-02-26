@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import bgImg from "../assets/images/ROJO_LETRAS BLANCAS.jpg";
-
-const ease = [0.22, 1, 0.36, 1];
+import BackgroundAnimation from "./BackgroundAnimation"; const ease = [0.22, 1, 0.36, 1];
 
 const Hero = () => {
     return (
@@ -19,21 +17,12 @@ const Hero = () => {
                 overflow: "hidden",
             }}
         >
-            {/* Background animado con zoom-in */}
-            <motion.div
-                className="hero-bg-overlay"
-                initial={{ scale: 1.08, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1.4, ease: "easeOut" }}
-                style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.85)), url(${bgImg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    position: "absolute",
-                    inset: 0,
-                    zIndex: -1,
-                }}
-            />
+            {/* Background animado de red */}
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: -1 }}>
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(rgba(10,10,14,0.95), rgba(0,0,0,0.9))", zIndex: -2 }} />
+                <BackgroundAnimation />
+                <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at center, transparent 0%, #000 100%)", zIndex: 1, pointerEvents: "none" }} />
+            </div>
 
             {/* Orb rojo decorativo (Centrado) */}
             <motion.div
@@ -71,39 +60,7 @@ const Hero = () => {
                 }}
             >
                 {/* ── CONTENIDO CENTRADO ── */}
-
-                {/* Badge pulsante */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.1, ease }}
-                    style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "10px",
-                        marginBottom: "32px",
-                        padding: "8px 24px",
-                        border: "1px solid rgba(227,28,37,0.4)",
-                        borderRadius: "30px",
-                        background: "rgba(227,28,37,0.08)",
-                    }}
-                >
-                    <motion.span
-                        animate={{ scale: [1, 1.4, 1] }}
-                        transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-                        style={{
-                            width: "8px",
-                            height: "8px",
-                            borderRadius: "50%",
-                            background: "#E31C25",
-                            display: "inline-block",
-                        }}
-                    />
-                    <span style={{ fontSize: "0.85rem", letterSpacing: "2.5px", color: "#E31C25", fontWeight: "700", textTransform: "uppercase" }}>
-                        Agencia de Marketing Digital
-                    </span>
-                </motion.div>
+                {/* Eliminado el Badge a petición */}
 
                 {/* Título principal */}
                 <motion.h1

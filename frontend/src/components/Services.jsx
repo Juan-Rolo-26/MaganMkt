@@ -470,11 +470,7 @@ const Services = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "2px",
-            }}
+            className="services-cards-grid"
           >
             {services.map((service, i) => (
               <ServiceCard key={service.slug} service={service} index={i} />

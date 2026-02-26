@@ -92,21 +92,26 @@ body {
 .new-menu-content {
   width: 100%;
   height: 100%;
-  max-width: 1750px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 80px 60px;
+  padding: 40px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .new-menu-close {
-  align-self: flex-end;
+  position: absolute;
+  top: 40px;
+  right: 40px;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
   transition: transform 0.4s ease;
+  z-index: 10;
 }
 
 .new-menu-close:hover {
@@ -117,6 +122,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
+  width: 100%;
 }
 
 .new-link-wrap {
@@ -128,11 +135,11 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -2px;
-  text-align: left;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  text-align: center;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
@@ -140,27 +147,33 @@ body {
 }
 
 .new-menu-link:hover {
-  transform: translateX(20px);
+  transform: scale(1.05) translateY(-5px);
   color: #000;
 }
 
 /* FOOTER */
 
 .new-menu-footer {
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.9;
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 1rem;
+  gap: 10px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  padding: 0 40px;
+  text-align: center;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   .new-menu-footer {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    text-align: left;
   }
 }
 
@@ -176,7 +189,7 @@ body {
 }
 
 .new-socials a:hover {
-  transform: translateY(-8px) scale(1.1);
+  transform: translateY(-5px) scale(1.1);
   color: #000;
 }
 
@@ -523,6 +536,9 @@ body {
 
 .contact-section {
   background-color: #fff !important;
+  padding-top: 130px !important;
+  padding-bottom: 40px !important;
+  min-height: calc(100vh - 110px);
 }
 
 .contact-header h2 {
@@ -1648,10 +1664,12 @@ body {
 
 .pa-quote-bg {
   position: absolute;
-  inset: -10%;
-  background: url('./assets/images/Frente2.png') center/cover no-repeat;
-  opacity: 0.15;
-  filter: grayscale(100%) blur(5px);
+  inset: 0;
+  background:
+    linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%),
+    linear-gradient(to right, #000 0%, transparent 15%, transparent 85%, #000 100%),
+    url('./assets/images/Frente2.png') center/contain no-repeat;
+  filter: grayscale(100%) contrast(1.1);
   z-index: 0;
 }
 
@@ -1941,5 +1959,162 @@ body {
     text-align: center;
     padding: 30px !important;
     gap: 20px !important;
+  }
+}
+
+/* ================== SERVICES GRID (desktop default) ================== */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* ================== MOBILE GLOBAL FIXES ================== */
+@media (max-width: 768px) {
+
+  /* ── Navbar ── */
+  /* Pill central: reducir letra y padding para que no se corte */
+  motion-nav>div:nth-child(2),
+  [class*="nav"] [class*="center"],
+  div[style*="whiteSpace: nowrap"] {
+    white-space: normal !important;
+  }
+
+  /* Navbar del Hero: ocultar texto largo central, mostrar solo MAGNA */
+  [style*="flex: 1.5"] span:last-child {
+    display: none !important;
+  }
+
+  /* Altura del nav reducida */
+  nav[style] {
+    height: 70px !important;
+  }
+
+  /* ── Hero Section ── */
+  .hero-minimal {
+    padding: 0 6% !important;
+    text-align: center;
+  }
+
+  .hero-title-large {
+    font-size: clamp(2.4rem, 10vw, 3.5rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 28px !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+
+  .hero-cta-group a,
+  .hero-cta-group [class*="btn"] {
+    width: 100% !important;
+    max-width: 320px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* ── Services Section ── */
+  .services-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+
+  /* Reducir número enorme de fondo */
+  .services-cards-grid article span[style*="9rem"] {
+    font-size: 5rem !important;
+  }
+
+  /* Stats bar */
+  [style*="background: #E31C25"][style*="flexWrap: wrap"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 28px 20px !important;
+    gap: 20px !important;
+  }
+
+  /* ── Work Process Cards ── */
+  .work-process-steps {
+    grid-template-columns: 1fr !important;
+    padding: 0 5% !important;
+  }
+
+  .step-card {
+    padding: 28px 24px !important;
+  }
+
+  /* ── About page ── */
+  .pa-hero-grid,
+  .pa-story-grid,
+  .pa-cta-box {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 30px 20px !important;
+    gap: 30px !important;
+  }
+
+  .pa-hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem) !important;
+  }
+
+  /* ── Contact Section ── */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-section {
+    padding-top: 110px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .contact-info-panel {
+    text-align: center;
+  }
+
+  .contact-header h2 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+  }
+
+  /* ── Footer ── */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .footer-col {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* ── Marquee brand logos ── */
+  .marquee-item {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  /* ── CTA section Services ── */
+  [style*="borderRadius: \"54px\""] {
+    border-radius: 24px !important;
+    padding: 50px 20px !important;
+  }
+
+  /* ── Metrics bar ── */
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
   }
 }
