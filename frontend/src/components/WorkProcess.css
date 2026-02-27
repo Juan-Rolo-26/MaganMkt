@@ -125,11 +125,49 @@
     height: 100%;
     object-fit: cover;
     opacity: 0.85;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .marquee-item:hover .marquee-img {
     opacity: 1;
+}
+
+/* Botón del marquee clicable */
+.marquee-item-btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.marquee-item-btn:hover {
+    transform: scale(1.08) translateY(-4px) !important;
+    border-color: rgba(227, 28, 37, 0.6) !important;
+    box-shadow: 0 8px 30px rgba(227, 28, 37, 0.3) !important;
+}
+
+/* Label tooltip que aparece al hover */
+.marquee-hover-label {
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(227, 28, 37, 0.95);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 5px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateX(-50%) translateY(4px);
+    z-index: 50;
+}
+
+.marquee-item-btn:hover .marquee-hover-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 @keyframes scroll-left {

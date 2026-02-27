@@ -11,6 +11,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import LegalNotice from './pages/LegalNotice';
 import CookiesPolicy from './pages/CookiesPolicy';
 import ServicePage from './pages/ServicePage';
+import CasosExito from './pages/CasosExito';
 import { AnimatePresence } from 'framer-motion';
 import './new-theme.css';
 
@@ -41,6 +42,10 @@ const routeMeta = {
   '/cookies': {
     title: 'Politica de Cookies | Magna MKT',
     description: 'Informacion sobre cookies utilizadas por Magna MKT y opciones de gestion.'
+  },
+  '/casos-de-exito': {
+    title: 'Casos de Éxito | Magna MKT',
+    description: 'Conocé los proyectos y marcas que han crecido con Magna MKT. Estrategia digital, performance y resultados reales.'
   }
 };
 
@@ -98,6 +103,7 @@ function App() {
           <Route path="/legal" element={<LegalNotice />} />
           <Route path="/cookies" element={<CookiesPolicy />} />
           <Route path="/servicios/:slug" element={<ServicePage />} />
+          <Route path="/casos-de-exito" element={<CasosExito />} />
         </Routes>
       </AnimatePresence>
       <FloatingWhatsApp />

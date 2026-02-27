@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Search, ShoppingCart, Link as LinkIcon, Rocket } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import './WorkProcess.css';
 
 import brand1 from '../assets/images/marcas (71).png';
@@ -15,16 +16,16 @@ import brand9 from '../assets/images/marcas (79).png';
 import brand10 from '../assets/images/marcas (80).png';
 
 const brands = [
-    { img: brand1 },
-    { img: brand2 },
-    { img: brand3 },
-    { img: brand4 },
-    { img: brand5 },
-    { img: brand6 },
-    { img: brand7 },
-    { img: brand8 },
-    { img: brand9 },
-    { img: brand10 },
+    { img: brand1, nombre: "Golf Argentino Store", casoId: 1 },
+    { img: brand2, nombre: "Aquasansa Piscinas", casoId: 2 },
+    { img: brand3, nombre: "TraDigital", casoId: 3 },
+    { img: brand5, nombre: "A Puro Pelo", casoId: 4 },
+    { img: brand6, nombre: "AdmiUp", casoId: 5 },
+    { img: brand7, nombre: "Becominds", casoId: 6 },
+    { img: brand8, nombre: "NimMus", casoId: 7 },
+    { img: brand9, nombre: "Impacto by AMES", casoId: 8 },
+    { img: brand10, nombre: "AMES", casoId: 9 },
+    { img: brand4, nombre: "Aldeitas Food", casoId: 10 },
 ];
 
 const steps = [
@@ -59,6 +60,16 @@ const WorkProcess = () => {
     const stepsRef = useRef(null);
     const sectionInView = useInView(sectionRef, { once: true, amount: 0.15 });
     const stepsInView = useInView(stepsRef, { once: true, amount: 0.1 });
+    const navigate = useNavigate();
+
+    const handleBrandClick = (casoId) => {
+        navigate('/casos-de-exito');
+        // Scroll to specific case after navigation
+        setTimeout(() => {
+            const el = document.getElementById(`caso-${casoId}`);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 400);
+    };
 
     return (
         <section className="work-process-section" ref={sectionRef}>
@@ -96,14 +107,40 @@ const WorkProcess = () => {
                 >
                     <div className="marquee-content">
                         {brands.map((brand, i) => (
-                            <div key={`brand1-${i}`} className="marquee-item">
-                                <img src={brand.img} alt={`Marca ${i + 1}`} className="marquee-img" />
-                            </div>
+                            <button
+                                key={`brand1-${i}`}
+                                className="marquee-item marquee-item-btn"
+                                onClick={() => handleBrandClick(brand.casoId)}
+                                title={`Ver caso: ${brand.nombre}`}
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    padding: 0,
+                                    cursor: 'pointer',
+                                    position: 'relative',
+                                }}
+                            >
+                                <img src={brand.img} alt={brand.nombre} className="marquee-img" />
+                                <span className="marquee-hover-label">{brand.nombre}</span>
+                            </button>
                         ))}
                         {brands.map((brand, i) => (
-                            <div key={`brand2-${i}`} className="marquee-item">
-                                <img src={brand.img} alt={`Marca ${i + 1}`} className="marquee-img" />
-                            </div>
+                            <button
+                                key={`brand2-${i}`}
+                                className="marquee-item marquee-item-btn"
+                                onClick={() => handleBrandClick(brand.casoId)}
+                                title={`Ver caso: ${brand.nombre}`}
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    padding: 0,
+                                    cursor: 'pointer',
+                                    position: 'relative',
+                                }}
+                            >
+                                <img src={brand.img} alt={brand.nombre} className="marquee-img" />
+                                <span className="marquee-hover-label">{brand.nombre}</span>
+                            </button>
                         ))}
                     </div>
                 </motion.div>

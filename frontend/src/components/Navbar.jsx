@@ -48,12 +48,14 @@ const Navbar = () => {
     { name: "SOBRE NOSOTROS", action: () => handleNavClick("/nosotros") },
     { name: "SERVICIOS", action: () => handleNavClick(null, "#services") },
     { name: "CONTACTO", action: () => handleNavClick("/contacto") },
+    { name: "CASOS DE ÉXITO", action: () => handleNavClick("/casos-de-exito") },
   ];
 
   // Función actualizada: Ahora devuelve "AGENCIA DE MARKETING"
   const getRouteName = () => {
     if (location.pathname === "/nosotros") return "NOSOTROS";
     if (location.pathname === "/contacto") return "CONTACTO";
+    if (location.pathname === "/casos-de-exito") return "CASOS DE ÉXITO";
     return "AGENCIA DE MARKETING";
   };
 

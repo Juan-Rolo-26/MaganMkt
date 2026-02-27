@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import BackgroundAnimation from "./BackgroundAnimation"; const ease = [0.22, 1, 0.36, 1];
+import logoMagna from "../assets/logos/logo.png";
+import logoRojo from "../assets/images/NEGRO_LETRAS_ROJAS-removebg-preview.png";
+
+const ease = [0.22, 1, 0.36, 1];
 
 const Hero = () => {
     return (
@@ -15,33 +18,80 @@ const Hero = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 overflow: "hidden",
+                background: "#0f0104",
             }}
         >
-            {/* Background animado de red */}
-            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: -1 }}>
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(rgba(10,10,14,0.95), rgba(0,0,0,0.9))", zIndex: -2 }} />
-                <BackgroundAnimation />
-                <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at center, transparent 0%, #000 100%)", zIndex: 1, pointerEvents: "none" }} />
-            </div>
+            {/* ── FONDO ROJO OSCURO BORGOÑA ── */}
+            {/* Capa base: rojo oscuro profundo y saturado */}
+            <div style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(160deg, #2a0308 0%, #180104 35%, #200308 65%, #0e0002 100%)",
+                zIndex: 0,
+            }} />
 
-            {/* Orb rojo decorativo (Centrado) */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 0.25, scale: 1 }}
-                transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
+            {/* Glow rojo central fuerte */}
+            <div style={{
+                position: "absolute",
+                inset: 0,
+                background: "radial-gradient(ellipse 90% 80% at 50% 50%, rgba(220,0,20,0.28) 0%, rgba(160,0,10,0.08) 55%, transparent 80%)",
+                zIndex: 1,
+                pointerEvents: "none",
+            }} />
+
+            {/* Viñeta esquinas oscuras */}
+            <div style={{
+                position: "absolute",
+                inset: 0,
+                background: "radial-gradient(ellipse 120% 120% at 50% 50%, transparent 40%, rgba(0,0,0,0.75) 100%)",
+                zIndex: 1,
+                pointerEvents: "none",
+            }} />
+
+            {/* Logo MAGNA con letras ROJAS — marca de agua de fondo bien visible */}
+            <div
                 style={{
                     position: "absolute",
                     top: "50%",
                     left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    width: "800px",
-                    height: "800px",
-                    background: "radial-gradient(circle, rgba(227,28,37,0.4), transparent 60%)",
-                    filter: "blur(90px)",
-                    zIndex: 0,
+                    transform: "translate(-50%, -48%)",
+                    width: "130vw",
+                    maxWidth: "1500px",
+                    zIndex: 2,
                     pointerEvents: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                 }}
-            />
+            >
+                {/* Logo rojo principal — letras bien visibles */}
+                <img
+                    src={logoRojo}
+                    alt="Magna MKT watermark"
+                    style={{
+                        width: "100%",
+                        height: "auto",
+                        opacity: 0.35,
+                        userSelect: "none",
+                        filter: "saturate(1.4) brightness(1.2)",
+                        mixBlendMode: "screen",
+                    }}
+                />
+            </div>
+
+            {/* Glow rojo extra al centro — refuerza la atmósfera roja */}
+            <div style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "1100px",
+                height: "700px",
+                background: "radial-gradient(ellipse, rgba(220,10,30,0.20) 0%, rgba(180,0,10,0.06) 50%, transparent 70%)",
+                filter: "blur(80px)",
+                zIndex: 1,
+                pointerEvents: "none",
+            }} />
 
             <div
                 className="container-centered"
@@ -55,7 +105,7 @@ const Hero = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     position: "relative",
-                    zIndex: 1,
+                    zIndex: 10,
                     textAlign: "center",
                 }}
             >
@@ -127,7 +177,7 @@ const Hero = () => {
                     <motion.a
                         whileHover={{ scale: 1.05, x: 4 }}
                         whileTap={{ scale: 0.95 }}
-                        href="#servicios"
+                        href="/casos-de-exito"
                         className="btn-secondary"
                         style={{ padding: "18px 40px", fontSize: "1.05rem" }}
                     >
