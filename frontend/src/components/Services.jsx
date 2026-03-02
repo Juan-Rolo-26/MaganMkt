@@ -39,14 +39,14 @@ const services = [
     accent: "#E31C25",
   },
   {
-    title: "Identidad de Marca y Diseno",
+    title: "Identidad de Marca y Diseño",
     slug: "branding-y-diseno",
     Icon: PaletteIcon,
     num: "03",
     tag: "Marca",
     description: [
       "Identidad visual y renovacion de marca",
-      "Diseno UX/UI moderno",
+      "Diseño UX/UI moderno",
       "Desarrollo web y comercio electronico",
     ],
     accent: "#E31C25",
@@ -183,6 +183,7 @@ const ServiceCard = ({ service, index }) => {
 
       {/* Tag + Icono */}
       <div
+        className="service-card-top"
         style={{
           display: "flex",
           alignItems: "center",
@@ -258,7 +259,7 @@ const ServiceCard = ({ service, index }) => {
       </h3>
 
       {/* Lista */}
-      <ul style={{ listStyle: "none", padding: 0, margin: "0 0 30px" }}>
+      <ul className="service-card-list" style={{ listStyle: "none", padding: 0, margin: "0 0 30px" }}>
         {service.description.map((item, idx) => (
           <Motion.li
             key={idx}
@@ -360,6 +361,7 @@ const Services = () => {
         >
           {/* ─── HEADER ─────────────────────────────────────── */}
           <Motion.div
+            className="services-section-header"
             initial={{ opacity: 0, y: -40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
@@ -376,6 +378,7 @@ const Services = () => {
             <div>
               {/* Chip con línea lateral */}
               <Motion.div
+                className="services-header-chip"
                 variants={chipVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -432,6 +435,7 @@ const Services = () => {
 
             {/* Contador animado */}
             <Motion.div
+              className="services-header-counter"
               variants={counterVariants}
               initial="hidden"
               whileInView="visible"
@@ -479,6 +483,7 @@ const Services = () => {
 
           {/* ─── BARRA DE STATS ──────────────────────────────── */}
           <Motion.div
+            className="services-stats-bar"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}

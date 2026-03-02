@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logoMagna from "../assets/logos/logo.png";
 import logoRojo from "../assets/images/NEGRO_LETRAS_ROJAS-removebg-preview.png";
 
 const ease = [0.22, 1, 0.36, 1];
+const MotionLink = motion(Link);
 
 const Hero = () => {
     return (
@@ -174,15 +176,15 @@ const Hero = () => {
                     >
                         Reserva tu consultoría
                     </motion.a>
-                    <motion.a
+                    <MotionLink
                         whileHover={{ scale: 1.05, x: 4 }}
                         whileTap={{ scale: 0.95 }}
-                        href="/casos-de-exito"
+                        to="/casos-de-exito"
                         className="btn-secondary"
                         style={{ padding: "18px 40px", fontSize: "1.05rem" }}
                     >
                         Nuestros proyectos
-                    </motion.a>
+                    </MotionLink>
                 </motion.div>
             </div>
 

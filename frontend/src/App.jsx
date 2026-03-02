@@ -59,6 +59,9 @@ const upsertMeta = (selector, attrName, attrValue, content) => {
   tag.setAttribute('content', content);
 };
 
+const resolvePublicUrl = (fileName) =>
+  new URL(`${import.meta.env.BASE_URL}${fileName}`, window.location.origin).toString();
+
 function App() {
   const location = useLocation();
 
@@ -80,6 +83,7 @@ function App() {
 
   useEffect(() => {
     const meta = routeMeta[location.pathname] || routeMeta['/'];
+    const logoUrl = resolvePublicUrl('logo.png');
 
     document.title = meta.title;
     upsertMeta('meta[name="description"]', 'name', 'description', meta.description);
@@ -87,8 +91,8 @@ function App() {
     upsertMeta('meta[property="og:description"]', 'property', 'og:description', meta.description);
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', meta.title);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', meta.description);
-    upsertMeta('meta[property="og:image"]', 'property', 'og:image', '/logo.png');
-    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', '/logo.png');
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', logoUrl);
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', logoUrl);
   }, [location.pathname]);
 
   return (

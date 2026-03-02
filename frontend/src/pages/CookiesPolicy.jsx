@@ -64,7 +64,7 @@ const CookiesPolicy = () => {
           </p>
 
           <h2>5. Mas informacion</h2>
-          <p>Si tiene dudas sobre nuestra politica de cookies, puede contactarnos en: diegob@magnamkt.com</p>
+          <p>Si tiene dudas sobre nuestra politica de cookies, puede contactarnos en: dballerini@magnamkt.com</p>
 
           <p className="policy-muted">Ultima actualizacion: Febrero 2024</p>
         </div>

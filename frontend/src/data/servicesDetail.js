@@ -77,7 +77,7 @@ export const servicesDetail = {
         color: "#ff003c"
     },
     "branding-y-diseno": {
-        title: "Identidad de Marca y Diseno Estrategico",
+        title: "Identidad de Marca y Diseño Estrategico",
         subtitle: "Creamos Marcas que Inspiran y Conectan",
         description:
             "Tu marca es mucho más que colores y formas. Es la manera en que te perciben tus clientes y cómo te destacás en un mercado competitivo. En MagnaMKT, construimos marcas memorables que hablan por vos y conectan con tu audiencia. En MagnaMKT no solo hacemos marketing; construimos alianzas estratégicas. Nos enfocamos en entender tu negocio, identificar oportunidades y ejecutar soluciones que generen impacto real. Con más de 50 clientes satisfechos y una metodología orientada a resultados, ayudamos a empresas como la tuya a alcanzar y superar sus objetivos. Cada marca es única y ponemos el corazón para reflejarlo.",
@@ -90,7 +90,7 @@ export const servicesDetail = {
             "Enfoque personalizado: cada marca es única y trabajamos para reflejarlo.",
             "Resultados comprobados: más de 50 empresas confían en nosotros para destacar.",
         ],
-        howTitle: "¿Que incluye nuestro servicio de Identidad de Marca y Diseno?",
+        howTitle: "¿Que incluye nuestro servicio de Identidad de Marca y Diseño?",
         howSteps: [
             {
                 title: "Creación de Identidad Visual",

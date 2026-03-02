@@ -227,14 +227,14 @@ const Navbar = () => {
 
               <div className="new-menu-footer">
                 <div className="new-socials">
-                  <a href="#"><InstagramIcon size={24} /></a>
-                  <a href="#"><LinkedinIcon size={24} /></a>
-                  <a href="#"><YoutubeIcon size={24} /></a>
+                  <a href="https://www.instagram.com/magnamkt_/"><InstagramIcon size={24} /></a>
+                  <a href="https://www.linkedin.com/in/dballerini/"><LinkedinIcon size={24} /></a>
+                  <a href="https://www.youtube.com/@MagnaMKT"><YoutubeIcon size={24} /></a>
                 </div>
                 <div>
                   <p>Rosario, Santa Fe — Argentina</p>
-                  <a href="mailto:diegob@magnamkt.com" className="new-mail">
-                    diegob@magnamkt.com
+                  <a href="mailto:dballerini@magnamkt.com" className="new-mail">
+                    dballerini@magnamkt.com
                   </a>
                 </div>
               </div>

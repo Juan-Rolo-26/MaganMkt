@@ -100,6 +100,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow-y: auto;
 }
 
 .new-menu-close {
@@ -135,7 +136,7 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 8vw, 4.5rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -1.5px;
@@ -159,18 +160,21 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  position: absolute;
-  bottom: 40px;
-  left: 0;
+  gap: 15px;
+  position: relative;
+  margin-top: 30px;
   width: 100%;
-  padding: 0 40px;
   text-align: center;
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .new-menu-footer {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    margin-top: 0;
+    padding: 0 40px;
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
@@ -2116,5 +2120,104 @@ body {
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 2rem !important;
+  }
+}
+
+/* RESPONSIVE SERVICIOS - CENTRADO MÓVIL */
+@media (max-width: 768px) {
+
+  /* Detail Page Centering */
+  .premium-service-page .pa-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .premium-service-page .pa-badge {
+    justify-content: center;
+  }
+
+  .premium-service-page .pa-hero-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-benefit-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .service-step-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-step-card>.service-step-num {
+    position: static !important;
+    margin-bottom: 15px;
+  }
+
+  .premium-service-page .pa-cta-text {
+    text-align: center !important;
+  }
+
+  .premium-service-page .pa-cta-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .premium-service-page .pa-btn-cta {
+    justify-content: center;
+  }
+
+  /* Services Component Centering */
+  #services .services-section-header {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #services .services-header-chip {
+    justify-content: center;
+  }
+
+  #services .services-header-chip>div {
+    display: none !important;
+  }
+
+  #services .services-header-counter {
+    text-align: center !important;
+  }
+
+  #services .services-stats-bar {
+    justify-content: center !important;
+    text-align: center !important;
+    flex-direction: column !important;
+  }
+
+  /* Service Cards Centering */
+  .services-cards-grid article {
+    align-items: center;
+    text-align: center;
+  }
+
+  .services-cards-grid article .service-card-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .services-cards-grid article ul li {
+    justify-content: center !important;
+  }
+
+  .services-cards-grid article>div[style*="margin"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }

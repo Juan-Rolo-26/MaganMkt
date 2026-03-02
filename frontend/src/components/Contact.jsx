@@ -12,8 +12,8 @@ const contactItems = [
   },
   {
     title: 'Correo electronico',
-    value: 'diegob@magnamkt.com',
-    href: 'mailto:diegob@magnamkt.com',
+    value: 'dballerini@magnamkt.com',
+    href: 'mailto:dballerini@magnamkt.com',
     Icon: MailIcon,
     color: '#00b5cc',
     glow: 'rgba(0,181,204,0.2)',

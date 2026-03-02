@@ -61,7 +61,7 @@ const LegalNotice = () => {
             jurisdiccion exclusiva de los tribunales de Rosario, Santa Fe.
           </p>
 
-          <p className="policy-muted">Contacto: diegob@magnamkt.com | +54 9 341 642-2073</p>
+          <p className="policy-muted">Contacto: dballerini@magnamkt.com | +54 9 341 642-2073</p>
         </div>
       </article>
     </Motion.section>

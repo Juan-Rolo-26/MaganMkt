@@ -76,6 +76,7 @@ const ServicePage = () => {
                     {steps.map((step, idx) => (
                         <Motion.div
                             key={`${sectionTitle}-${step.title}-${idx}`}
+                            className="service-step-card"
                             style={{ background: cardBackground, padding: '40px', borderRadius: '20px', border: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +84,7 @@ const ServicePage = () => {
                             transition={{ delay: idx * 0.1 }}
                             whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}
                         >
-                            <div style={{ fontSize: '4rem', fontWeight: '900', color: 'rgba(255,0,60,0.05)', position: 'absolute', top: '10px', right: '20px', lineHeight: '1' }}>
+                            <div className="service-step-num" style={{ fontSize: '4rem', fontWeight: '900', color: 'rgba(255,0,60,0.05)', position: 'absolute', top: '10px', right: '20px', lineHeight: '1' }}>
                                 {idx + 1}
                             </div>
                             <h3 style={{ fontSize: '1.4rem', fontWeight: '800', marginBottom: '15px', color: '#000', position: 'relative', zIndex: 1 }}>
@@ -174,6 +175,7 @@ const ServicePage = () => {
                         {benefits.map((benefit, idx) => (
                             <Motion.div
                                 key={idx}
+                                className="service-benefit-card"
                                 style={{ background: '#f8f9fa', padding: '40px', borderRadius: '20px', border: '1px solid #eaeaea', display: 'flex', alignItems: 'flex-start', gap: '20px' }}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}

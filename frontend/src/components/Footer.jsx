@@ -29,13 +29,13 @@ const serviceLinks = [
 const contactItems = [
   { label: 'Rosario - Santa Fe, Argentina', href: null, Icon: MapPinIcon },
   { label: '+54 9 341 642-2073', href: 'https://wa.me/5493416422073', Icon: PhoneIcon },
-  { label: 'diegob@magnamkt.com', href: 'mailto:diegob@magnamkt.com', Icon: MailIcon }
+  { label: 'dballerini@magnamkt.com', href: 'mailto:dballerini@magnamkt.com', Icon: MailIcon }
 ];
 
 const socialLinks = [
-  { href: '#', label: 'LinkedIn', Icon: LinkedinIcon },
-  { href: '#', label: 'Instagram', Icon: InstagramIcon },
-  { href: '#', label: 'YouTube', Icon: YoutubeIcon }
+  { href: 'https://www.linkedin.com/in/dballerini/', label: 'LinkedIn', Icon: LinkedinIcon },
+  { href: 'https://www.instagram.com/magnamkt_/', label: 'Instagram', Icon: InstagramIcon },
+  { href: 'https://www.youtube.com/@MagnaMKT', label: 'YouTube', Icon: YoutubeIcon }
 ];
 
 const colVariants = {

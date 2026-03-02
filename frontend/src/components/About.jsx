@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ChartIcon, HandshakeIcon, PaletteIcon, TargetIcon, UsersIcon } from './SiteIcons';
+import diegoImg from '../assets/images/DiegoBallerini.jpeg';
 import Lottie from 'lottie-react';
 import digitalAnimation from '../assets/animations/digital.json';
 
@@ -19,6 +21,7 @@ const values = [
 ];
 
 const ease = [0.22, 1, 0.36, 1];
+const MotionLink = motion(Link);
 
 const About = () => {
     const hero = useReveal(0.1);
@@ -67,8 +70,8 @@ const About = () => {
                                 <strong className="pa-strong"> resultados reales para empresas reales</strong>.
                             </motion.p>
 
-                            <motion.a
-                                href="/contacto"
+                            <MotionLink
+                                to="/contacto"
                                 className="pa-btn-cta"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={hero.inView ? { opacity: 1, y: 0 } : {}}
@@ -78,10 +81,10 @@ const About = () => {
                                 style={{ display: 'inline-block', marginTop: '20px' }}
                             >
                                 Hablemos de tu proyecto
-                            </motion.a>
+                            </MotionLink>
                         </div>
 
-                        {/* Right visual */}
+                        {/* Right visual restored */}
                         <motion.div
                             className="pa-hero-visual"
                             initial={{ opacity: 0, x: 60, scale: 0.95 }}
@@ -105,36 +108,49 @@ const About = () => {
             <section className="pa-story" ref={story.ref}>
                 <div className="pa-container">
                     <div className="pa-story-grid">
-                        <motion.h2
-                            className="pa-section-title pa-story-text"
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={story.inView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.85, delay: 0, ease }}
-                        >
-                            Creemos en transformar,<br />
-                            <span className="pa-text-red">no solo en prometer.</span>
-                        </motion.h2>
+                        <div className="pa-story-text-content">
+                            <motion.h2
+                                className="pa-section-title pa-story-text"
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={story.inView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.85, delay: 0, ease }}
+                            >
+                                Nuestra Historia.<br />
+                                <span className="pa-text-red">Diego Ballerini.</span>
+                            </motion.h2>
 
-                        <div className="pa-story-paragraphs">
-                            <motion.p
-                                initial={{ opacity: 0, y: 35 }}
-                                animate={story.inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.75, delay: 0.1, ease }}
-                            >
-                                Después de más de 30 años liderando equipos y proyectos en grandes empresas,
-                                me di cuenta de algo fundamental: muchas estrategias de marketing se quedaban cortas.
-                                No porque faltara creatividad, sino porque carecían de una conexión real con los objetivos de negocio.
-                            </motion.p>
-                            <motion.p
-                                initial={{ opacity: 0, y: 35 }}
-                                animate={story.inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.75, delay: 0.22, ease }}
-                            >
-                                En 2022 decidí dar un giro y así nació MagnaMKT. Mi proyecto de vida para transformar
-                                la forma en que las empresas abordan el marketing. ¿El objetivo? Crear estrategias
-                                innovadoras, medibles, rentables y alineadas con la realidad de tu negocio.
-                            </motion.p>
+                            <div className="pa-story-paragraphs">
+                                <motion.p
+                                    initial={{ opacity: 0, y: 35 }}
+                                    animate={story.inView ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: 0.75, delay: 0.1, ease }}
+                                >
+                                    Con más de 30 años de experiencia liderando equipos en grandes empresas, descubrí que muchas estrategias de marketing carecían de conexión con los resultados reales de negocio.
+                                </motion.p>
+                                <motion.p
+                                    initial={{ opacity: 0, y: 35 }}
+                                    animate={story.inView ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: 0.75, delay: 0.22, ease }}
+                                >
+                                    Por eso fundé MagnaMKT: con el objetivo de diseñar estrategias medibles, rentables y 100% alineadas con el crecimiento de cada cliente.
+                                </motion.p>
+                            </div>
                         </div>
+
+                        <motion.div
+                            className="pa-story-image"
+                            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                            animate={story.inView ? { opacity: 1, x: 0, scale: 1 } : {}}
+                            transition={{ duration: 0.85, delay: 0.2, ease }}
+                            style={{ position: 'relative', width: '100%', maxWidth: '400px', margin: '0 auto' }}
+                        >
+                            <img
+                                src={diegoImg}
+                                alt="Diego Ballerini - CEO MagnaMKT"
+                                style={{ width: '100%', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)', filter: 'grayscale(100%) contrast(1.1)' }}
+                            />
+                            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(227,28,37,0.2), transparent)', borderRadius: '16px', pointerEvents: 'none' }} />
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -249,8 +265,8 @@ const About = () => {
                                 excepcionales, hablemos.
                             </p>
                         </motion.div>
-                        <motion.a
-                            href="/contacto"
+                        <MotionLink
+                            to="/contacto"
                             className="pa-btn-cta"
                             initial={{ opacity: 0, x: 30 }}
                             animate={cta.inView ? { opacity: 1, x: 0 } : {}}
@@ -259,7 +275,7 @@ const About = () => {
                             whileTap={{ scale: 0.95 }}
                         >
                             Contactanos Ya
-                        </motion.a>
+                        </MotionLink>
                     </motion.div>
                 </div>
             </section>
