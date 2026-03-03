@@ -540,9 +540,9 @@ body {
 
 .contact-section {
   background-color: #fff !important;
-  padding-top: 130px !important;
+  padding-top: 100px !important;
   padding-bottom: 40px !important;
-  min-height: calc(100vh - 110px);
+  min-height: auto;
 }
 
 .contact-header h2 {
@@ -2076,7 +2076,7 @@ body {
   }
 
   .contact-section {
-    padding-top: 110px !important;
+    padding-top: 100px !important;
     padding-left: 16px !important;
     padding-right: 16px !important;
   }

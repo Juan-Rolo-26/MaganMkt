@@ -63,13 +63,28 @@ const Contact = () => {
         animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
         transition={{ duration: 10, repeat: Infinity }}
         className="orb-teal"
-        style={{ width: 600, height: 600, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0 }}
+        style={{
+          position: 'absolute',
+          width: 600,
+          height: 600,
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 0
+        }}
       />
       <Motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
         transition={{ duration: 12, repeat: Infinity, delay: 4 }}
         className="orb-red"
-        style={{ width: 400, height: 400, top: '10%', left: '-5%', zIndex: 0 }}
+        style={{
+          position: 'absolute',
+          width: 400,
+          height: 400,
+          top: '10%',
+          left: '-5%',
+          zIndex: 0
+        }}
       />
 
       <div className="contact-glow" />
