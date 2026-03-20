@@ -136,6 +136,32 @@ const casos = [
         tags: ["Alimentos", "B2B", "Expansión Territorial"],
         resultados: ["Canal B2B desarrollado", "Expansión territorial", "Marca posicionada"],
     },
+    {
+        id: 11,
+        logo: null,
+        iniciales: "PC",
+        nombre: "Proar Centro Médico",
+        sector: "Salud",
+        color: "#06b6d4",
+        tagline: "Centro médico en proceso de profesionalización y estructuración de su sistema comercial y de marketing.",
+        descripcion: "Centro médico con una propuesta de valor clara en términos de servicios, pero con una estructura comercial y de marketing no definida, sin procesos estandarizados ni un sistema que permita escalar la captación de pacientes de manera previsible. Actualmente, la generación de demanda y conversión depende más de acciones aisladas que de una estrategia integrada, lo que limita su crecimiento y dificulta la toma de decisiones.",
+        estrategia: "Desde Magna abordamos el proyecto en dos etapas clave. En una primera instancia, realizamos un diagnóstico integral del negocio, analizando el modelo actual, la estructura organizativa, los procesos comerciales y el rol del marketing dentro del centro médico. A partir de ese diagnóstico, diseñamos un sistema de marketing y comercial alineado a los objetivos del negocio, definiendo el rol del área de marketing, la estructura de captación de demanda, el embudo de conversión, procesos comerciales claros y la integración entre marketing, atención y dirección. El foco no está solo en generar leads, sino en construir un sistema que permita transformar la inversión en resultados sostenibles y escalables en el tiempo.",
+        tags: ["Diagnóstico Estratégico", "Reestructuración", "Sistema Comercial"],
+        resultados: ["Diagnóstico estratégico del negocio", "Orden y definición del área de marketing", "Diseño del sistema comercial", "Estructuración del embudo de conversión", "Alineación entre dirección, marketing y operación"],
+    },
+    {
+        id: 12,
+        logo: null,
+        iniciales: "2GE",
+        nombre: "2GE",
+        sector: "Energía",
+        color: "#f59e0b",
+        tagline: "Soluciones energéticas confiables con desarrollo comercial orientado a resultados.",
+        descripcion: "Empresa especializada en instalación, mantenimiento y reparación de grupos electrógenos y sistemas de energía solar, con un fuerte posicionamiento basado en conocimiento técnico, confiabilidad operativa y resultados comprobados en campo. Cuenta con experiencia en clientes empresariales (B2B) como clínicas, industrias y comercios, así como en el segmento residencial (B2C), donde ofrece soluciones tanto de respaldo energético como de eficiencia a través de energía solar.",
+        estrategia: "Desde Magna trabajamos en el ordenamiento estratégico y desarrollo comercial de la empresa, con el objetivo de transformar un crecimiento basado en recomendaciones en un sistema previsible y escalable de generación de oportunidades. El foco está en definir el posicionamiento, estructurar la oferta, segmentar correctamente los mercados (B2B y B2C) y desarrollar un sistema de captación de leads que permita ampliar el alcance y sostener el crecimiento en el tiempo.",
+        tags: ["Energía de Respaldo", "Energía Solar", "Desarrollo Comercial"],
+        resultados: ["Claridad estratégica y posicionamiento comercial", "Generación de oportunidades de negocio (leads)", "Desarrollo de sistema comercial escalable", "Expansión en segmentos B2B y B2C"],
+    },
 ];
 
 /* ─────────────────────────────────────────────── */
@@ -175,12 +201,12 @@ const CasoCard = ({ caso, index }) => {
                 gap: "1rem",
             }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flex: 1 }}>
-                    {/* Logo real de la marca */}
+                    {/* Logo o iniciales de la marca */}
                     <div style={{
                         width: "72px",
                         height: "72px",
                         borderRadius: "18px",
-                        background: "#111",
+                        background: caso.logo ? "#111" : `${caso.color}15`,
                         border: `1px solid ${caso.color}30`,
                         display: "flex",
                         alignItems: "center",
@@ -189,15 +215,22 @@ const CasoCard = ({ caso, index }) => {
                         flexShrink: 0,
                         boxShadow: `0 4px 20px ${caso.color}15`,
                     }}>
-                        <img
-                            src={caso.logo}
-                            alt={caso.nombre}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                            }}
-                        />
+                        {caso.logo ? (
+                            <img
+                                src={caso.logo}
+                                alt={caso.nombre}
+                                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                            />
+                        ) : (
+                            <span style={{
+                                fontSize: caso.iniciales?.length > 2 ? "0.9rem" : "1.1rem",
+                                fontWeight: "900",
+                                color: caso.color,
+                                letterSpacing: "-0.02em",
+                            }}>
+                                {caso.iniciales}
+                            </span>
+                        )}
                     </div>
 
                     <div>
