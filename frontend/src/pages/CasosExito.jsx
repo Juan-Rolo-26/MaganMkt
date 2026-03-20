@@ -12,6 +12,8 @@ import logoBecominds from "../assets/images/marcas (77).png";
 import logoNimmus from "../assets/images/marcas (78).png";
 import logoImpacto from "../assets/images/marcas (79).png";
 import logoAmes from "../assets/images/marcas (80).png";
+import logoProar from "../assets/images/ProAr.png";
+import logo2GE from "../assets/images/2GE.png";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -138,8 +140,7 @@ const casos = [
     },
     {
         id: 11,
-        logo: null,
-        iniciales: "PC",
+        logo: logoProar,
         nombre: "Proar Centro Médico",
         sector: "Salud",
         color: "#06b6d4",
@@ -151,8 +152,7 @@ const casos = [
     },
     {
         id: 12,
-        logo: null,
-        iniciales: "2GE",
+        logo: logo2GE,
         nombre: "2GE",
         sector: "Energía",
         color: "#f59e0b",

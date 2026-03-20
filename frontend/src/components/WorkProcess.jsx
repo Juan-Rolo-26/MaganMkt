@@ -14,6 +14,8 @@ import brand7 from '../assets/images/marcas (77).png';
 import brand8 from '../assets/images/marcas (78).png';
 import brand9 from '../assets/images/marcas (79).png';
 import brand10 from '../assets/images/marcas (80).png';
+import brandProar from '../assets/images/ProAr.png';
+import brand2GE from '../assets/images/2GE.png';
 
 const brands = [
     { img: brand1, nombre: "Golf Argentino Store", casoId: 1 },
@@ -26,6 +28,8 @@ const brands = [
     { img: brand9, nombre: "Impacto by AMES", casoId: 8 },
     { img: brand10, nombre: "AMES", casoId: 9 },
     { img: brand4, nombre: "Aldeitas Food", casoId: 10 },
+    { img: brandProar, nombre: "Proar Centro Médico", casoId: 11 },
+    { img: brand2GE, nombre: "2GE", casoId: 12 },
 ];
 
 const steps = [
