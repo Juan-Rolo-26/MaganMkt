@@ -4,6 +4,7 @@ import { motion as Motion } from 'framer-motion';
 import { servicesDetail } from '../data/servicesDetail';
 import { ArrowRightIcon } from '../components/SiteIcons';
 import ServiceHeroVisual from '../components/ServiceHeroVisual';
+import { DIEGO_BALLERINI_MEETING_URL } from '../constants/links';
 import '../new-theme.css';
 
 const ServicePage = () => {
@@ -75,7 +76,7 @@ const ServicePage = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
                     {steps.map((step, idx) => (
                         <Motion.div
-                            key={`${sectionTitle}-${step.title}-${idx}`}
+                            key={`${sectionTitle}-${step.title}`}
                             className="service-step-card"
                             style={{ background: cardBackground, padding: '40px', borderRadius: '20px', border: '1px solid #eaeaea', position: 'relative', overflow: 'hidden' }}
                             initial={{ opacity: 0, y: 30 }}
@@ -174,7 +175,7 @@ const ServicePage = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', marginTop: '40px' }}>
                         {benefits.map((benefit, idx) => (
                             <Motion.div
-                                key={idx}
+                                key={`${title}-${benefit}`}
                                 className="service-benefit-card"
                                 style={{ background: '#f8f9fa', padding: '40px', borderRadius: '20px', border: '1px solid #eaeaea', display: 'flex', alignItems: 'flex-start', gap: '20px' }}
                                 initial={{ opacity: 0, y: 30 }}
@@ -218,11 +219,11 @@ const ServicePage = () => {
                                 Llevá tu <span className="pa-text-red">{title}</span> al Siguiente Nivel
                             </h2>
                             <p style={{ fontSize: '1.1rem', color: '#ccc', maxWidth: '600px' }}>
-                                Agenda una auditoría gratuita de 30 minutos y descubramos juntos el verdadero potencial de tu negocio.
+                                Agenda una auditoría gratuita de 45 minutos y descubramos juntos el verdadero potencial de tu negocio.
                             </p>
                         </div>
                         <a
-                            href="https://calendly.com/dballerini"
+                            href={DIEGO_BALLERINI_MEETING_URL}
                             target="_blank"
                             rel="noreferrer"
                             className="pa-btn-cta"

@@ -14,6 +14,7 @@ import logoImpacto from "../assets/images/marcas (79).png";
 import logoAmes from "../assets/images/marcas (80).png";
 import logoProar from "../assets/images/ProAr.png";
 import logo2GE from "../assets/images/2GE.png";
+import { DIEGO_BALLERINI_MEETING_URL } from "../constants/links";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -461,7 +462,7 @@ const CasosExito = () => {
                         Hablemos de tu <span style={{ color: "#e31c25" }}>proyecto</span>
                     </h2>
                     <a
-                        href="https://calendly.com/dballerini"
+                        href={DIEGO_BALLERINI_MEETING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

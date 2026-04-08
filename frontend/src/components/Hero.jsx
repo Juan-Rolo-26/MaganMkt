@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import videoMagan from "../assets/VideoMagan.mp4";
+import { DIEGO_BALLERINI_MEETING_URL } from "../constants/links";
 
 const ease = [0.22, 1, 0.36, 1];
 const MotionLink = motion(Link);
@@ -143,7 +144,7 @@ const Hero = () => {
                     <motion.a
                         whileHover={{ scale: 1.05, boxShadow: "0 15px 40px rgba(227,28,37,0.45)" }}
                         whileTap={{ scale: 0.95 }}
-                        href="https://calendly.com/dballerini"
+                        href={DIEGO_BALLERINI_MEETING_URL}
                         className="btn-main"
                         style={{ padding: "18px 40px", fontSize: "1.05rem" }}
                     >
