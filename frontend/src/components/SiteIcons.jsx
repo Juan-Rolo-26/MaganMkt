@@ -166,3 +166,9 @@ export const CloseIcon = ({ size = 22 }) => (
     <path d="m18 6-12 12" />
   </svg>
 );
+
+export const CheckIcon = ({ size = 22, color = 'currentColor' }) => (
+  <svg {...baseProps} style={{ ...iconSize(size), stroke: color }}>
+    <path d="M20 6 9 17l-5-5" />
+  </svg>
+);

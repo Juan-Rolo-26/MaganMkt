@@ -141,15 +141,15 @@ const Hero = () => {
                         flexWrap: "wrap"
                     }}
                 >
-                    <motion.a
+                    <MotionLink
                         whileHover={{ scale: 1.05, boxShadow: "0 15px 40px rgba(227,28,37,0.45)" }}
                         whileTap={{ scale: 0.95 }}
-                        href={DIEGO_BALLERINI_MEETING_URL}
+                        to="/asesoria-estrategica"
                         className="btn-main"
-                        style={{ padding: "18px 40px", fontSize: "1.05rem" }}
+                        style={{ padding: "18px 40px", fontSize: "1.05rem", textDecoration: "none" }}
                     >
-                        Reserva tu consultoría
-                    </motion.a>
+                        Reserva tu asesoría
+                    </MotionLink>
                     <MotionLink
                         whileHover={{ scale: 1.05, x: 4 }}
                         whileTap={{ scale: 0.95 }}

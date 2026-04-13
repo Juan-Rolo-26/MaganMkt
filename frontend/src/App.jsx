@@ -12,6 +12,7 @@ import LegalNotice from './pages/LegalNotice';
 import CookiesPolicy from './pages/CookiesPolicy';
 import ServicePage from './pages/ServicePage';
 import CasosExito from './pages/CasosExito';
+import AsesoriaEstrategica from './pages/AsesoriaEstrategica';
 import { AnimatePresence } from 'framer-motion';
 import './new-theme.css';
 
@@ -20,6 +21,10 @@ const routeMeta = {
     title: 'Magna MKT | Agencia de Marketing Digital',
     description:
       'Agencia de marketing digital en Argentina. Estrategia, publicidad, branding y desarrollo web para impulsar tu negocio.'
+  },
+  '/asesoria-estrategica': {
+    title: 'Asesoría Estratégica con Diego Ballerini | MagnaMKT',
+    description: '90 minutos de trabajo directo con Diego Ballerini, fundador de MagnaMKT, para diagnosticar exactamente qué está frenando el crecimiento digital de tu negocio. Diagnóstico, análisis y plan de acción concreto.'
   },
   '/nosotros': {
     title: 'Nosotros | Magna MKT',
@@ -101,6 +106,7 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
+          <Route path="/asesoria-estrategica" element={<AsesoriaEstrategica />} />
           <Route path="/nosotros" element={<AboutPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/privacidad" element={<PrivacyPolicy />} />

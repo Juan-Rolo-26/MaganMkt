@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import {
   ArrowRightIcon,
+  CheckIcon,
   ChartIcon,
   IncBadgeIcon,
   MegaphoneIcon,
@@ -352,6 +353,198 @@ const Services = () => {
           }}
         />
 
+        {/* ─── BLOQUE DESTACADO ASESORÍA ────────────────── */}
+        <Motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            width: "100%",
+            background: "linear-gradient(135deg, #0a0a0a 0%, #151515 100%)",
+            borderTop: "1px solid rgba(227, 28, 37, 0.3)",
+            borderBottom: "1px solid rgba(227, 28, 37, 0.3)",
+            padding: "100px 0",
+            marginBottom: "100px",
+            position: "relative",
+            zIndex: 2,
+            overflow: "hidden"
+          }}
+        >
+          <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", alignItems: "center", gap: "5rem" }}>
+            {/* Texto (60% aprox) */}
+            <div style={{ flex: "1 1 60% " }}>
+              <Motion.span
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                style={{
+                  display: "inline-block",
+                  color: "#E31C25",
+                  fontSize: "0.8rem",
+                  fontWeight: "900",
+                  letterSpacing: "4px",
+                  textTransform: "uppercase",
+                  marginBottom: "2rem",
+                  padding: "8px 20px",
+                  background: "rgba(227, 28, 37, 0.08)",
+                  borderRadius: "4px",
+                  borderLeft: "4px solid #E31C25"
+                }}
+              >
+                ASESORÍA CON DIEGO BALLERINI
+              </Motion.span>
+              <h3 style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", fontWeight: "900", color: "#fff", marginBottom: "2.5rem", lineHeight: "1.05", letterSpacing: "-0.05em" }}>
+                Asesoría Estratégica
+              </h3>
+              <p style={{
+                fontSize: "1.3rem",
+                color: "rgba(255,255,255,0.8)",
+                marginBottom: "3rem",
+                lineHeight: "1.8",
+                maxWidth: "850px",
+                fontWeight: "300",
+                letterSpacing: "0.01em"
+              }}>
+                90 minutos de trabajo directo con Diego para diagnosticar exactamente qué está frenando el crecimiento digital de tu negocio y diseñar un plan de acción concreto para los próximos 90 días. Sin promesas mágicas. Sin venta de humo. Solo claridad estratégica.
+              </p>
+
+              {/* Lista de beneficios */}
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 3.5rem" }}>
+                {[
+                  "Diagnóstico profundo y personalizado de tu negocio",
+                  "Plan de acción priorizado para los próximos 90 días",
+                  "Grabación y documento resumen incluidos"
+                ].map((item, id) => (
+                  <Motion.li
+                    key={id}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + (id * 0.1) }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "20px",
+                      color: "rgba(255,255,255,0.9)",
+                      fontSize: "1.15rem",
+                      marginBottom: "18px",
+                      fontWeight: "400",
+                      letterSpacing: "0.02em"
+                    }}
+                  >
+                    <div style={{
+                      flex: "0 0 auto",
+                      width: "28px",
+                      height: "28px",
+                      background: "#E31C25",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 4px 10px rgba(227, 28, 37, 0.3)"
+                    }}>
+                      <CheckIcon size={16} color="#fff" />
+                    </div>
+                    {item}
+                  </Motion.li>
+                ))}
+              </ul>
+
+              <Link
+                to="/asesoria-estrategica"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "16px",
+                  background: "#E31C25",
+                  color: "#fff",
+                  padding: "24px 54px",
+                  borderRadius: "2px",
+                  fontWeight: "900",
+                  fontSize: "1.05rem",
+                  letterSpacing: "3px",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+                  boxShadow: "0 20px 40px rgba(227, 28, 37, 0.25)"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 30px 60px rgba(227, 28, 37, 0.45)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(227, 28, 37, 0.25)";
+                }}
+              >
+                Conocer más sobre la asesoría <ArrowRightIcon size={22} />
+              </Link>
+            </div>
+
+            {/* Imagen (40% aprox) */}
+            <div style={{ flex: "1 1 40%", position: "relative", textAlign: "center" }}>
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "120%",
+                height: "120%",
+                background: "radial-gradient(circle, rgba(227, 28, 37, 0.15) 0%, transparent 70%)",
+                filter: "blur(40px)",
+                zIndex: 0
+              }} />
+              <img
+                src="/src/assets/images/DiegoBallerini.jpeg"
+                alt="Diego Ballerini"
+                style={{
+                  width: "100%",
+                  maxWidth: "500px",
+                  borderRadius: "8px",
+                  boxShadow: "0 40px 80px rgba(0,0,0,0.5)",
+                  position: "relative",
+                  zIndex: 1,
+                  filter: "grayscale(10%) contrast(1.1)"
+                }}
+              />
+            </div>
+          </div>
+        </Motion.div>
+
+        {/* ─── SEPARADOR OTROS SERVICIOS ────────────────── */}
+        <div
+          style={{
+            maxWidth: "1400px",
+            margin: "0 auto",
+            padding: "0 40px",
+            marginBottom: "60px",
+            textAlign: "center"
+          }}
+        >
+          <Motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "24px" }}
+          >
+            <div style={{ height: "1px", flex: 1, background: "rgba(255,255,255,0.1)" }} />
+            <span
+              style={{
+                fontSize: "0.75rem",
+                fontWeight: "800",
+                letterSpacing: "4px",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.4)",
+              }}
+            >
+              Otros Servicios de la Agencia
+            </span>
+            <div style={{ height: "1px", flex: 1, background: "rgba(255,255,255,0.1)" }} />
+          </Motion.div>
+        </div>
+
         <div
           style={{
             maxWidth: "1400px",
@@ -359,7 +552,7 @@ const Services = () => {
             padding: "0 40px",
           }}
         >
-          {/* ─── HEADER ─────────────────────────────────────── */}
+          {/* ─── HEADER (ORIGINAL SLIGHTLY MODIFIED) ────────── */}
           <Motion.div
             className="services-section-header"
             initial={{ opacity: 0, y: -40 }}
@@ -376,42 +569,13 @@ const Services = () => {
             }}
           >
             <div>
-              {/* Chip con línea lateral */}
-              <Motion.div
-                className="services-header-chip"
-                variants={chipVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}
-              >
-                <Motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "36px" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  style={{ height: "2px", background: "#E31C25" }}
-                />
-                <span
-                  style={{
-                    fontSize: "0.72rem",
-                    fontWeight: "700",
-                    letterSpacing: "3px",
-                    textTransform: "uppercase",
-                    color: "#E31C25",
-                  }}
-                >
-                  Nuestra Experticia
-                </span>
-              </Motion.div>
-
               <Motion.h2
                 variants={titleVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 style={{
-                  fontSize: "clamp(3rem, 6vw, 5rem)",
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
                   fontWeight: "900",
                   letterSpacing: "-0.04em",
                   lineHeight: 0.95,
