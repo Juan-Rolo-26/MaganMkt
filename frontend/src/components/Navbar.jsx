@@ -46,7 +46,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "INICIO", action: () => handleNavClick("/") },
     { name: "SOBRE NOSOTROS", action: () => handleNavClick("/nosotros") },
-    { name: "ASESORÍA", action: () => handleNavClick("/asesoria-estrategica") },
+    { name: "ASESORÍA 1:1", action: () => handleNavClick("/asesoria-estrategica") },
     { name: "SERVICIOS", action: () => handleNavClick(null, "#services") },
     { name: "CONTACTO", action: () => handleNavClick("/contacto") },
     { name: "CASOS DE ÉXITO", action: () => handleNavClick("/casos-de-exito") },
@@ -54,7 +54,7 @@ const Navbar = () => {
 
   // Función actualizada: Ahora devuelve "AGENCIA DE MARKETING"
   const getRouteName = () => {
-    if (location.pathname === "/asesoria-estrategica") return "ASESORÍA";
+    if (location.pathname === "/asesoria-estrategica") return "ASESORÍA 1:1";
     if (location.pathname === "/nosotros") return "NOSOTROS";
     if (location.pathname === "/contacto") return "CONTACTO";
     if (location.pathname === "/casos-de-exito") return "CASOS DE ÉXITO";
@@ -222,7 +222,7 @@ const Navbar = () => {
                       }}
                     >
                       {link.name}
-                      {link.name === "ASESORÍA" && (
+                      {link.name === "ASESORÍA 1:1" && (
                         <span style={{
                           position: "absolute",
                           top: "10px",

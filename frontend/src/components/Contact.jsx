@@ -169,7 +169,7 @@ const Contact = () => {
               transition={{ duration: 0.75, delay: 0.32 }}
               style={{ marginTop: '1.5rem', color: 'rgba(255,255,255,0.7)', lineHeight: '1.6', fontSize: '1.4rem', maxWidth: '600px' }}
             >
-              Completá el formulario para reservar tu sesión estratégica. Te contactaré pronto para coordinar.
+              Completá el formulario para reservar tu asesoría estratégica. Te contactaré pronto para coordinar.
             </Motion.p>
           </div>
 
@@ -309,7 +309,7 @@ const Contact = () => {
             </div>
 
             <div style={{ marginBottom: '2rem' }}>
-              <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Contame en pocas líneas qué te trae a esta sesión *</label>
+              <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Contame en pocas líneas qué te trae a esta asesoría *</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -317,7 +317,7 @@ const Contact = () => {
                 required
                 rows="5"
                 maxLength="500"
-                placeholder="No hace falta que entres en detalle, con un párrafo alcanza."
+                placeholder="No hace falta que entres en detalle, con un párrafo alcanza. Quiero entender qué te llevó a buscar esta asesoría específicamente."
                 style={{ width: "100%", padding: "16px 20px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff", resize: "none", fontSize: '1.1rem', lineHeight: '1.6' }}
               />
             </div>
@@ -361,10 +361,10 @@ const Contact = () => {
                 transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
               }}
             >
-              {sending ? "Enviando..." : sent ? "✓ ¡Sesión Reservada!" : "Reservar mi sesión"}
+              {sending ? "Enviando..." : sent ? "✓ ¡Te contacto en las próximas 4 hs!" : "Reservar mi asesoría"}
             </Motion.button>
 
-            <p style={{ marginTop: '2rem', fontSize: '1rem', color: 'rgba(255,255,255,0.5)', textAlign: 'center', lineHeight: '1.6' }}>
+            <p style={{ marginTop: '2rem', fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', fontWeight: '600', textAlign: 'center', lineHeight: '1.6' }}>
               Una vez que envíes este formulario, te voy a contactar dentro de las próximas 4 horas para coordinar el pago y agendar el horario que más te convenga.
             </p>
           </form>

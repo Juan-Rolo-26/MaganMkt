@@ -2,6 +2,22 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import diegoPhoto from "../assets/images/DiegoBallerini.jpeg";
 import { ArrowRightIcon, CheckIcon, CloseIcon } from "../components/SiteIcons";
+import brand1 from "../assets/images/marcas (71).png";
+import brand2 from "../assets/images/marcas (72).png";
+import brand3 from "../assets/images/marcas (73).png";
+import brand4 from "../assets/images/marcas (74).png";
+import brand5 from "../assets/images/marcas (75).png";
+import brand6 from "../assets/images/marcas (76).png";
+import brand7 from "../assets/images/marcas (77).png";
+import brand8 from "../assets/images/marcas (78).png";
+import brand9 from "../assets/images/marcas (79).png";
+import brand10 from "../assets/images/marcas (80).png";
+import brandProar from "../assets/images/ProAr.png";
+import brand2GE from "../assets/images/2GE.png";
+
+const brands = [
+    brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brandProar, brand2GE
+];
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -192,9 +208,81 @@ const AsesoriaEstrategica = () => {
                     />
                 </motion.div>
             </section>
+            {/* SECCIÓN MARCAS (IGUAL QUE EN HOME) */}
+            <section style={{ width: "100%", background: "#000", padding: "40px 0", overflow: "hidden", position: "relative" }}>
+                <style>
+                    {`
+                    @keyframes scroll-brands {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
+                    }
+                    .brands-marquee {
+                        display: flex;
+                        width: max-content;
+                        animation: scroll-brands 40s linear infinite;
+                        gap: 20px;
+                        align-items: center;
+                    }
+                    .brands-marquee:hover {
+                        animation-play-state: paused;
+                    }
+                    .marquee-item {
+                        width: 160px;
+                        height: 160px;
+                        display: flex;
+                        alignItems: center;
+                        justifyContent: center;
+                        background: #111;
+                        border-radius: 20px;
+                        border: 1px solid rgba(255,255,255,0.05);
+                        padding: 15px;
+                        flex-shrink: 0;
+                        transition: all 0.3s ease;
+                    }
+                    .marquee-item:hover {
+                        transform: scale(1.05);
+                        border-color: rgba(227, 28, 37, 0.4);
+                        box-shadow: 0 10px 30px rgba(227, 28, 37, 0.2);
+                    }
+                    .marquee-img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: contain;
+                        opacity: 0.85;
+                        transition: all 0.3s;
+                    }
+                    .marquee-item:hover .marquee-img {
+                        opacity: 1;
+                    }
+                    `}
+                </style>
+                <div className="brands-marquee">
+                    {[...brands, ...brands].map((img, i) => (
+                        <div key={i} className="marquee-item">
+                            <img
+                                src={img}
+                                alt="Marca"
+                                className="marquee-img"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </section>
 
             {/* SECCIÓN 2 — DOLORES Y FRUSTRACIONES */}
-            <section style={{ padding: "100px 4%", background: "#f9f9f9", color: "#111" }}>
+            <section style={{ padding: "100px 4%", background: "#f9f9f9", color: "#111", position: "relative" }}>
+                {/* LÍNEA DE SEPARACIÓN ROJA (SEGÚN IMAGEN) */}
+                <div style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "80%",
+                    height: "4px",
+                    backgroundColor: "#e31c25",
+                    opacity: 0.8,
+                    borderRadius: "0 0 10px 10px"
+                }} />
                 <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
                     <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: "900", marginBottom: "2rem", textAlign: "center" }}>
                         Si te sentís identificado con esto, esta asesoría es para vos
@@ -333,6 +421,44 @@ const AsesoriaEstrategica = () => {
                 </div>
             </section>
 
+            {/* BOTÓN INTERMEDIO 1 */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                style={{ textAlign: "center", margin: "4rem 0" }}
+            >
+                <button
+                    onClick={scrollToForm}
+                    style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "12px",
+                        background: "#E31C25",
+                        color: "white",
+                        padding: "16px 36px",
+                        borderRadius: "50px",
+                        fontWeight: "700",
+                        fontSize: "1.05rem",
+                        border: "none",
+                        cursor: "pointer",
+                        boxShadow: "0 10px 40px rgba(227, 28, 37, 0.4)",
+                        transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "translateY(-5px)";
+                        e.currentTarget.style.boxShadow = "0 15px 50px rgba(227, 28, 37, 0.6)";
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "0 10px 40px rgba(227, 28, 37, 0.4)";
+                    }}
+                >
+                    Reservar mi asesoría <ArrowRightIcon size={20} />
+                </button>
+            </motion.div>
+
             {/* SECCIÓN 6 — TRANSFORMACIÓN (EL ANTES Y DESPUÉS) */}
             <section style={{ padding: "100px 4%", background: "#000" }}>
                 <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -417,6 +543,44 @@ const AsesoriaEstrategica = () => {
                     </div>
                 </div>
             </section>
+
+            {/* BOTÓN INTERMEDIO 2 */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                style={{ textAlign: "center", margin: "4rem 0" }}
+            >
+                <button
+                    onClick={scrollToForm}
+                    style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "12px",
+                        background: "#E31C25",
+                        color: "white",
+                        padding: "16px 36px",
+                        borderRadius: "50px",
+                        fontWeight: "700",
+                        fontSize: "1.05rem",
+                        border: "none",
+                        cursor: "pointer",
+                        boxShadow: "0 10px 40px rgba(227, 28, 37, 0.4)",
+                        transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "translateY(-5px)";
+                        e.currentTarget.style.boxShadow = "0 15px 50px rgba(227, 28, 37, 0.6)";
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "0 10px 40px rgba(227, 28, 37, 0.4)";
+                    }}
+                >
+                    Reservar mi asesoría <ArrowRightIcon size={20} />
+                </button>
+            </motion.div>
 
             {/* SECCIÓN 8 — QUIÉN SOY YO */}
             <section style={{ padding: "100px 4%", background: "#0c0c0c" }}>
@@ -585,7 +749,7 @@ const AsesoriaEstrategica = () => {
                 <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
                     <div style={{ textAlign: "center", marginBottom: "4rem" }}>
                         <h2 style={{ fontSize: "3.5rem", fontWeight: "900", marginBottom: "1.5rem" }}>Iniciá tu reserva</h2>
-                        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1.2rem" }}>Completá tus datos y me pondré en contacto con vos para enviarte el link de pago y agendar la sesión.</p>
+                        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1.2rem" }}>Completá tus datos y me pondré en contacto con vos para enviarte el link de pago y agendar la asesoría.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} style={{ background: "rgba(255,255,255,0.03)", padding: "clamp(1.5rem, 5vw, 4rem)", borderRadius: "32px", border: "1px solid rgba(255,255,255,0.08)" }}>
@@ -689,7 +853,7 @@ const AsesoriaEstrategica = () => {
                         </div>
 
                         <div style={{ marginBottom: "3rem" }}>
-                            <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Contame en pocas líneas qué te trae a esta sesión *</label>
+                            <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Contame en pocas líneas qué te trae a esta asesoría *</label>
                             <textarea
                                 name="message"
                                 value={formData.message}
@@ -697,7 +861,7 @@ const AsesoriaEstrategica = () => {
                                 required
                                 rows="5"
                                 maxLength="500"
-                                placeholder="No hace falta que entres en detalle, con un párrafo alcanza. Quiero entender qué te llevó a buscar esta sesión específicamente."
+                                placeholder="No hace falta que entres en detalle, con un párrafo alcanza. Quiero entender qué te llevó a buscar esta asesoría específicamente."
                                 style={{ width: "100%", padding: "16px 20px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff", resize: "none", fontSize: "1.1rem", lineHeight: "1.6" }}
                             />
                             <p style={{ textAlign: "right", fontSize: "0.9rem", color: "rgba(255,255,255,0.4)", marginTop: "0.5rem" }}>
@@ -754,9 +918,9 @@ const AsesoriaEstrategica = () => {
                                     boxShadow: sent ? "0 10px 30px rgba(34, 197, 94, 0.3)" : "0 10px 30px rgba(227, 28, 37, 0.3)"
                                 }}
                             >
-                                {sending ? "Enviando..." : sent ? "✓ ¡Sesión Reservada!" : "Reservar mi sesión"}
+                                {sending ? "Enviando..." : sent ? "✓ ¡Te contacto en las próximas 4 hs!" : "Reservar mi asesoría"}
                             </button>
-                            <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: "1.6", maxWidth: "600px", margin: "0 auto" }}>
+                            <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.9)", fontWeight: "600", lineHeight: "1.6", maxWidth: "600px", margin: "1.5rem auto 0" }}>
                                 Una vez que envíes este formulario, te voy a contactar dentro de las próximas 4 horas para coordinar el pago y agendar el horario que más te convenga.
                             </p>
                         </div>

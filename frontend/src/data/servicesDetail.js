@@ -72,7 +72,7 @@ export const servicesDetail = {
                 desc: "Campanas segmentadas que convierten contactos potenciales en clientes."
             }
         ],
-        ctaText: "Solicitá tu consultoría digital ahora",
+        ctaText: "Solicitá tu asesoría",
         Icon: ChartIcon,
         color: "#ff003c"
     },
@@ -128,7 +128,7 @@ export const servicesDetail = {
                 desc: "Documentamos tu identidad y te damos todo lo necesario para implementarla."
             }
         ],
-        ctaText: "Agendá ya tu consultoría",
+        ctaText: "Agendá ya tu asesoría",
         Icon: PaletteIcon,
         color: "#ff003c"
     },
@@ -166,7 +166,7 @@ export const servicesDetail = {
                 desc: "Analizamos y mejoramos constantemente para maximizar resultados."
             }
         ],
-        ctaText: "Solicitá una consultoría publicitaria",
+        ctaText: "Solicitá una asesoría publicitaria",
         Icon: MegaphoneIcon,
         color: "#ff003c"
     },
