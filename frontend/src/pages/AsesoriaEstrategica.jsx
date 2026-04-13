@@ -176,16 +176,7 @@ const AsesoriaEstrategica = () => {
                     transition={{ duration: 1, delay: 0.2, ease }}
                     style={{ flex: "1 1 400px", maxWidth: "500px", position: "relative" }}
                 >
-                    <div style={{
-                        position: "absolute",
-                        top: "10%",
-                        left: "10%",
-                        right: "-5%",
-                        bottom: "-5%",
-                        border: "2px solid #e31c25",
-                        borderRadius: "24px",
-                        zIndex: 0
-                    }} />
+
                     <img
                         src={diegoPhoto}
                         alt="Diego Ballerini"
@@ -597,8 +588,8 @@ const AsesoriaEstrategica = () => {
                         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1.2rem" }}>Completá tus datos y me pondré en contacto con vos para enviarte el link de pago y agendar la sesión.</p>
                     </div>
 
-                    <form onSubmit={handleSubmit} style={{ background: "rgba(255,255,255,0.03)", padding: "4rem", borderRadius: "32px", border: "1px solid rgba(255,255,255,0.08)" }}>
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "2.5rem", marginBottom: "2.5rem" }}>
+                    <form onSubmit={handleSubmit} style={{ background: "rgba(255,255,255,0.03)", padding: "clamp(1.5rem, 5vw, 4rem)", borderRadius: "32px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: "2.5rem", marginBottom: "2.5rem" }}>
                             <div>
                                 <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Nombre y Apellido *</label>
                                 <input
@@ -626,7 +617,7 @@ const AsesoriaEstrategica = () => {
                             </div>
                         </div>
 
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "2.5rem", marginBottom: "2.5rem" }}>
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: "2.5rem", marginBottom: "2.5rem" }}>
                             <div>
                                 <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>WhatsApp *</label>
                                 <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.4)", marginBottom: "0.5rem" }}>Por si necesito coordinar algo más rápido (incluí código de país)</p>
@@ -766,7 +757,7 @@ const AsesoriaEstrategica = () => {
                                 {sending ? "Enviando..." : sent ? "✓ ¡Sesión Reservada!" : "Reservar mi sesión"}
                             </button>
                             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: "1.6", maxWidth: "600px", margin: "0 auto" }}>
-                                Una vez que envíes este formulario, te voy a contactar dentro de las próximas 4 horas hábiles para coordinar el pago y agendar el horario que más te convenga.
+                                Una vez que envíes este formulario, te voy a contactar dentro de las próximas 4 horas para coordinar el pago y agendar el horario que más te convenga.
                             </p>
                         </div>
                     </form>

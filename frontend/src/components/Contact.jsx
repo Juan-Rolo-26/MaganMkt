@@ -126,7 +126,7 @@ const Contact = () => {
 
       <div
         className="contact-grid"
-        style={{ position: 'relative', zIndex: 1, maxWidth: '1400px', margin: '0 auto', padding: '0 4%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '5rem' }}
+        style={{ position: 'relative', zIndex: 1, maxWidth: '1400px', margin: '0 auto', padding: '0 4%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: '5rem' }}
       >
         {/* ── Left: Info Panel ───────────────────── */}
         <Motion.aside
@@ -210,7 +210,7 @@ const Contact = () => {
           animate={inView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <form onSubmit={handleSubmit} className="glass-card contact-form" style={{ background: 'rgba(255,255,255,0.03)', padding: '4rem', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <form onSubmit={handleSubmit} className="glass-card contact-form" style={{ background: 'rgba(255,255,255,0.03)', padding: 'clamp(1rem, 5vw, 4rem)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.08)' }}>
             <div style={{ marginBottom: '2rem' }}>
               <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Nombre y Apellido *</label>
               <input
@@ -365,7 +365,7 @@ const Contact = () => {
             </Motion.button>
 
             <p style={{ marginTop: '2rem', fontSize: '1rem', color: 'rgba(255,255,255,0.5)', textAlign: 'center', lineHeight: '1.6' }}>
-              Una vez que envíes este formulario, te voy a contactar dentro de las próximas 4 horas hábiles para coordinar el pago y agendar el horario que más te convenga.
+              Una vez que envíes este formulario, te voy a contactar dentro de las próximas 4 horas para coordinar el pago y agendar el horario que más te convenga.
             </p>
           </form>
         </Motion.div>

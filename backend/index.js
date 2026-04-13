@@ -30,7 +30,7 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: "diego@magnamkt.com", // Assuming this is the Gmail or update as needed
+    to: "dballerini@gmail.com", // Dirección donde recibirás los mensajes
     subject: `Nueva Reserva de Sesión: ${name}`,
     text: `
             Nombre y Apellido: ${name}
