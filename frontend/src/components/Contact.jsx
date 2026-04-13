@@ -4,14 +4,14 @@ import { ArrowRightIcon, MailIcon, MapPinIcon, PhoneIcon } from './SiteIcons';
 
 const contactItems = [
   {
-    title: 'Ubicacion',
+    title: 'Ubicación',
     value: 'Rosario, Santa Fe, Argentina',
     Icon: MapPinIcon,
     color: '#e31c25',
     glow: 'rgba(227,28,37,0.2)',
   },
   {
-    title: 'Correo electronico',
+    title: 'Correo electrónico',
     value: 'dballerini@magnamkt.com',
     href: 'mailto:dballerini@magnamkt.com',
     Icon: MailIcon,
@@ -19,7 +19,7 @@ const contactItems = [
     glow: 'rgba(0,181,204,0.2)',
   },
   {
-    title: 'Telefono / WhatsApp',
+    title: 'Teléfono / WhatsApp',
     value: '+54 9 341 642-2073',
     href: 'https://wa.me/5493416422073',
     Icon: PhoneIcon,
@@ -42,6 +42,8 @@ const Contact = () => {
   });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [showErrorBanner, setShowErrorBanner] = useState(false);
 
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, { once: true, amount: 0.15 });
@@ -51,8 +53,26 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setEmailError('');
+
+    if (!validateEmail(formData.email)) {
+      setEmailError('Por favor ingresá un email válido');
+      setShowErrorBanner(true);
+      setTimeout(() => setShowErrorBanner(false), 5000);
+      return;
+    }
+    setShowErrorBanner(false);
+
     setSending(true);
 
     try {
@@ -210,7 +230,36 @@ const Contact = () => {
           animate={inView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <form onSubmit={handleSubmit} className="glass-card contact-form" style={{ background: 'rgba(255,255,255,0.03)', padding: 'clamp(1rem, 5vw, 4rem)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <form onSubmit={handleSubmit} className="glass-card contact-form" style={{ position: 'relative', background: 'rgba(255,255,255,0.03)', padding: 'clamp(1rem, 5vw, 4rem)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.08)' }}>
+
+            <AnimatePresence>
+              {showErrorBanner && (
+                <Motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                  style={{
+                    marginBottom: '2rem',
+                    padding: '1.5rem',
+                    background: 'rgba(227, 28, 37, 0.15)',
+                    border: '1px solid #e31c25',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    color: '#fff',
+                    boxShadow: '0 10px 30px rgba(227, 28, 37, 0.2)'
+                  }}
+                >
+                  <span style={{ fontSize: '1.5rem' }}>🚫</span>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.1rem' }}>Error en el formulario</strong>
+                    <span style={{ opacity: 0.8 }}>Por favor revisá tu correo electrónico para continuar.</span>
+                  </div>
+                </Motion.div>
+              )}
+            </AnimatePresence>
+
             <div style={{ marginBottom: '2rem' }}>
               <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Nombre y Apellido *</label>
               <input
@@ -231,11 +280,44 @@ const Contact = () => {
                 type="email"
                 name="email"
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => {
+                  handleChange(e);
+                  if (emailError) setEmailError('');
+                }}
                 required
                 placeholder="tu@email.com"
-                style={{ width: "100%", padding: "16px 20px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff", fontSize: "1.1rem" }}
+                style={{
+                  width: "100%",
+                  padding: "16px 20px",
+                  background: "rgba(255,255,255,0.05)",
+                  border: emailError ? "2px solid #e31c25" : "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "12px",
+                  color: "#fff",
+                  fontSize: "1.1rem",
+                  transition: "all 0.3s ease",
+                  outline: "none"
+                }}
               />
+              <AnimatePresence>
+                {emailError && (
+                  <Motion.div
+                    initial={{ opacity: 0, y: -10, filter: 'blur(4px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: -10, filter: 'blur(4px)' }}
+                    style={{
+                      color: '#e31c25',
+                      fontSize: '0.9rem',
+                      marginTop: '0.5rem',
+                      fontWeight: '700',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                  >
+                    <span>⚠️</span> {emailError}
+                  </Motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <div style={{ marginBottom: '2rem' }}>

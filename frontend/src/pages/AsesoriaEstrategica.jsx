@@ -35,6 +35,8 @@ const AsesoriaEstrategica = () => {
     });
     const [sending, setSending] = useState(false);
     const [sent, setSent] = useState(false);
+    const [emailError, setEmailError] = useState("");
+    const [showErrorBanner, setShowErrorBanner] = useState(false);
 
     const formRef = useRef(null);
 
@@ -47,8 +49,26 @@ const AsesoriaEstrategica = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setEmailError("");
+
+        if (!validateEmail(formData.email)) {
+            setEmailError("Por favor ingresá un email válido");
+            setShowErrorBanner(true);
+            setTimeout(() => setShowErrorBanner(false), 5000);
+            return;
+        }
+        setShowErrorBanner(false);
+
         setSending(true);
 
         try {
@@ -256,6 +276,17 @@ const AsesoriaEstrategica = () => {
                     }
                     `}
                 </style>
+                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                    <h3 style={{
+                        fontSize: '1.2rem',
+                        fontWeight: '800',
+                        color: 'rgba(255,255,255,0.4)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.3em'
+                    }}>
+                        Marcas que confiaron
+                    </h3>
+                </div>
                 <div className="brands-marquee">
                     {[...brands, ...brands].map((img, i) => (
                         <div key={i} className="marquee-item">
@@ -740,7 +771,36 @@ const AsesoriaEstrategica = () => {
                         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1.2rem" }}>Completá tus datos y me pondré en contacto con vos para enviarte el link de pago y agendar la asesoría.</p>
                     </div>
 
-                    <form onSubmit={handleSubmit} style={{ background: "rgba(255,255,255,0.03)", padding: "clamp(1.5rem, 5vw, 4rem)", borderRadius: "32px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                    <form onSubmit={handleSubmit} style={{ position: 'relative', background: "rgba(255,255,255,0.03)", padding: "clamp(1.5rem, 5vw, 4rem)", borderRadius: "32px", border: "1px solid rgba(255,255,255,0.08)" }}>
+
+                        <AnimatePresence>
+                            {showErrorBanner && (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                                    style={{
+                                        marginBottom: '2.5rem',
+                                        padding: '1.50rem',
+                                        background: 'rgba(227, 28, 37, 0.15)',
+                                        border: '1px solid #e31c25',
+                                        borderRadius: '16px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '1.2rem',
+                                        color: '#fff',
+                                        boxShadow: '0 10px 40px rgba(227, 28, 37, 0.25)'
+                                    }}
+                                >
+                                    <span style={{ fontSize: '1.8rem' }}>🚫</span>
+                                    <div>
+                                        <strong style={{ display: 'block', fontSize: '1.2rem', marginBottom: '4px' }}>Error en el registro</strong>
+                                        <span style={{ opacity: 0.85, fontSize: '1.05rem' }}>El email ingresado no es válido. Por favor corregilo para continuar.</span>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
                         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: "2.5rem", marginBottom: "2.5rem" }}>
                             <div>
                                 <label style={{ display: "block", marginBottom: "0.75rem", fontSize: "1.1rem", fontWeight: "700", color: "rgba(255,255,255,0.8)" }}>Nombre y Apellido *</label>
@@ -761,11 +821,44 @@ const AsesoriaEstrategica = () => {
                                     type="email"
                                     name="email"
                                     value={formData.email}
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        handleChange(e);
+                                        if (emailError) setEmailError("");
+                                    }}
                                     required
                                     placeholder="tu@email.com"
-                                    style={{ width: "100%", padding: "16px 20px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", color: "#fff", fontSize: "1.1rem" }}
+                                    style={{
+                                        width: "100%",
+                                        padding: "16px 20px",
+                                        background: "rgba(255,255,255,0.05)",
+                                        border: emailError ? "2px solid #e31c25" : "1px solid rgba(255,255,255,0.1)",
+                                        borderRadius: "12px",
+                                        color: "#fff",
+                                        fontSize: "1.1rem",
+                                        transition: "all 0.3s ease",
+                                        outline: "none"
+                                    }}
                                 />
+                                <AnimatePresence>
+                                    {emailError && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                                            style={{
+                                                color: "#e31c25",
+                                                fontSize: "0.9rem",
+                                                marginTop: "0.5rem",
+                                                fontWeight: "700",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: "0.5rem"
+                                            }}
+                                        >
+                                            <span>⚠️</span> {emailError}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
                         </div>
 
