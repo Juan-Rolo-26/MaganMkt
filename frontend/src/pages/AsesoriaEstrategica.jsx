@@ -271,18 +271,6 @@ const AsesoriaEstrategica = () => {
 
             {/* SECCIÓN 2 — DOLORES Y FRUSTRACIONES */}
             <section style={{ padding: "100px 4%", background: "#f9f9f9", color: "#111", position: "relative" }}>
-                {/* LÍNEA DE SEPARACIÓN ROJA (SEGÚN IMAGEN) */}
-                <div style={{
-                    position: "absolute",
-                    top: 0,
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    width: "80%",
-                    height: "4px",
-                    backgroundColor: "#e31c25",
-                    opacity: 0.8,
-                    borderRadius: "0 0 10px 10px"
-                }} />
                 <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
                     <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: "900", marginBottom: "2rem", textAlign: "center" }}>
                         Si te sentís identificado con esto, esta asesoría es para vos
