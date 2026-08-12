@@ -14,6 +14,14 @@ import logoImpacto from "../assets/images/marcas (79).png";
 import logoAmes from "../assets/images/marcas (80).png";
 import logoProar from "../assets/images/ProAr.png";
 import logo2GE from "../assets/images/2GE.png";
+
+// Nuevos logos
+import logoSexshop from "../assets/logos/sexshop.png";
+import logoAvalian from "../assets/logos/avalian.png";
+import logoTot from "../assets/logos/tot.png";
+import logoAldeitas1 from "../assets/logos/aldeitas1.png";
+import logoAldeitas2 from "../assets/logos/aldeitas2.png";
+
 import { DIEGO_BALLERINI_MEETING_URL } from "../constants/links";
 
 const ease = [0.22, 1, 0.36, 1];
@@ -129,7 +137,7 @@ const casos = [
     },
     {
         id: 10,
-        logo: logoAldeitas,
+        logo: logoAldeitas1,
         nombre: "Aldeitas Food",
         sector: "Alimentación",
         color: "#84cc16",
@@ -162,6 +170,55 @@ const casos = [
         estrategia: "Desde Magna trabajamos en el ordenamiento estratégico y desarrollo comercial de la empresa, con el objetivo de transformar un crecimiento basado en recomendaciones en un sistema previsible y escalable de generación de oportunidades. El foco está en definir el posicionamiento, estructurar la oferta, segmentar correctamente los mercados (B2B y B2C) y desarrollar un sistema de captación de leads que permita ampliar el alcance y sostener el crecimiento en el tiempo.",
         tags: ["Energía de Respaldo", "Energía Solar", "Desarrollo Comercial"],
         resultados: ["Claridad estratégica y posicionamiento comercial", "Generación de oportunidades de negocio (leads)", "Desarrollo de sistema comercial escalable", "Expansión en segmentos B2B y B2C"],
+    },
+    {
+        id: 13,
+        logo: logoSexshop,
+        nombre: "Club A Sexshop",
+        sector: "E-commerce",
+        color: "#db2777",
+        tagline: "Ecommerce especializado en bienestar sexual y productos para adultos.",
+        descripcion: "Club A Sexshop es un ecommerce especializado en bienestar sexual y productos para adultos, con una propuesta centrada en ofrecer una experiencia de compra segura, discreta y libre de prejuicios. Su catálogo reúne primeras marcas, asesoramiento personalizado y envíos a todo el país, consolidándose como una de las tiendas referentes del segmento.",
+        estrategia: "Desde Magna desarrollamos una estrategia integral de marketing digital enfocada en el crecimiento del ecommerce, combinando branding, contenido de alto impacto y campañas de performance orientadas a la conversión. Trabajamos la generación de tráfico calificado, la optimización del embudo de ventas y la producción constante de contenido orgánico y publicitario para fortalecer el posicionamiento de la marca y maximizar el rendimiento de cada inversión.",
+        tags: ["Crecimiento ecommerce", "Performance", "Posicionamiento de marca"],
+        resultados: ["Crecimiento del ecommerce", "Performance & Conversiones", "Posicionamiento de marca"],
+    },
+    {
+        id: 14,
+        logo: logoAvalian,
+        nombre: "Avalian",
+        sector: "Salud",
+        color: "#fbbf24",
+        tagline: "Empresa de medicina prepaga con fuerte compromiso con la calidad del servicio.",
+        descripcion: "Avalian es una de las principales empresas de medicina prepaga de Argentina, reconocida por su cobertura médica de excelencia, una amplia red de prestadores y un fuerte compromiso con la calidad del servicio. Su red comercial desempeña un rol clave en la experiencia de afiliación y en la construcción de confianza con cada nuevo asociado.",
+        estrategia: "Desde Magna diseñamos e implementamos el programa 'Ejecutivo Digital de Alto Impacto', una capacitación estratégica destinada a profesionalizar digitalmente a los más de 300 ejecutivos comerciales que integran la red nacional de Avalian. El programa fortalece competencias en marketing digital, comunicación estratégica, métricas e inteligencia artificial aplicada, alineadas al posicionamiento institucional.",
+        tags: ["Profesionalización Comercial", "Capacitación Estratégica", "Transformación Digital"],
+        resultados: ["Profesionalización Comercial", "Transformación Digital", "Capacitación Estratégica"],
+    },
+    {
+        id: 15,
+        logo: logoTot,
+        nombre: "TOT",
+        sector: "Indumentaria",
+        color: "#3b82f6",
+        tagline: "Diseño, fabricación y comercialización de ropa interior masculina y deportiva.",
+        descripcion: "TOT es una empresa rosarina con más de 17 años de trayectoria, dedicada al diseño, fabricación y comercialización de ropa interior masculina y líneas deportivas. Con producción propia, una comunidad de más de 60.000 seguidores y un sólido canal de ventas digitales, la marca se ha consolidado como un referente dentro de su segmento.",
+        estrategia: "Desde Magna desarrollamos un proceso de acompañamiento estratégico enfocado en el ordenamiento integral del negocio, alineando producción, ecommerce y gestión comercial para construir una estructura preparada para escalar. Trabajamos en la optimización de sus canales digitales, la planificación comercial, la profesionalización del equipo y el acompañamiento estratégico sobre Meta Ads para impulsar un crecimiento rentable.",
+        tags: ["Ordenamiento Estratégico", "Gestión Comercial", "Escalabilidad Digital"],
+        resultados: ["Ordenamiento Estratégico", "Gestión Comercial", "Escalabilidad Digital"],
+    },
+    {
+        id: 16,
+        logo: null,
+        iniciales: "IM",
+        nombre: "Italmédica",
+        sector: "Salud",
+        color: "#14b8a6",
+        tagline: "Medicina prepaga respaldada por el Hospital Italiano de Rosario.",
+        descripcion: "Italmédica es una empresa de medicina prepaga respaldada por el Hospital Italiano de Rosario, con una propuesta centrada en brindar cobertura médica de calidad, atención personalizada y soluciones accesibles para personas, familias y empresas.",
+        estrategia: "Desde Magna desarrollamos una estrategia integral para fortalecer el crecimiento comercial de Italmédica desde dos ejes. Diseñamos un sistema de captación digital orientado a la generación de leads calificados mediante campañas de performance y posicionamiento estratégico. En paralelo, implementamos el programa 'Ejecutivo Digital de Alto Impacto' para profesionalizar a los 30 ejecutivos comerciales de la provincia de Santa Fe.",
+        tags: ["Generación de Leads", "Capacitación Comercial", "Performance Digital"],
+        resultados: ["Generación de Leads", "Capacitación Comercial", "Performance Digital"],
     },
 ];
 

@@ -17,6 +17,12 @@ import brand10 from '../assets/images/marcas (80).png';
 import brandProar from '../assets/images/ProAr.png';
 import brand2GE from '../assets/images/2GE.png';
 
+import logoSexshop from "../assets/logos/sexshop.png";
+import logoAvalian from "../assets/logos/avalian.png";
+import logoTot from "../assets/logos/tot.png";
+import logoAldeitas1 from "../assets/logos/aldeitas1.png";
+import logoAldeitas2 from "../assets/logos/aldeitas2.png";
+
 const brands = [
     { img: brand1, nombre: "Golf Argentino Store", casoId: 1 },
     { img: brand2, nombre: "Aquasansa Piscinas", casoId: 2 },
@@ -27,9 +33,13 @@ const brands = [
     { img: brand8, nombre: "NimMus", casoId: 7 },
     { img: brand9, nombre: "Impacto by AMES", casoId: 8 },
     { img: brand10, nombre: "AMES", casoId: 9 },
-    { img: brand4, nombre: "Aldeitas Food", casoId: 10 },
+    { img: logoAldeitas1, nombre: "Aldeitas Food", casoId: 10 },
+    { img: logoAldeitas2, nombre: "Aldeitas B2B", casoId: 10 },
     { img: brandProar, nombre: "Proar Centro Médico", casoId: 11 },
     { img: brand2GE, nombre: "2GE", casoId: 12 },
+    { img: logoSexshop, nombre: "Club A Sexshop", casoId: 13 },
+    { img: logoAvalian, nombre: "Avalian", casoId: 14 },
+    { img: logoTot, nombre: "TOT", casoId: 15 },
 ];
 
 const steps = [

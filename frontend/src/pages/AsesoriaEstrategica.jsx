@@ -5,7 +5,6 @@ import { ArrowRightIcon, CheckIcon, CloseIcon } from "../components/SiteIcons";
 import brand1 from "../assets/images/marcas (71).png";
 import brand2 from "../assets/images/marcas (72).png";
 import brand3 from "../assets/images/marcas (73).png";
-import brand4 from "../assets/images/marcas (74).png";
 import brand5 from "../assets/images/marcas (75).png";
 import brand6 from "../assets/images/marcas (76).png";
 import brand7 from "../assets/images/marcas (77).png";
@@ -15,8 +14,14 @@ import brand10 from "../assets/images/marcas (80).png";
 import brandProar from "../assets/images/ProAr.png";
 import brand2GE from "../assets/images/2GE.png";
 
+import logoSexshop from "../assets/logos/sexshop.png";
+import logoAvalian from "../assets/logos/avalian.png";
+import logoTot from "../assets/logos/tot.png";
+import logoAldeitas1 from "../assets/logos/aldeitas1.png";
+import logoAldeitas2 from "../assets/logos/aldeitas2.png";
+
 const brands = [
-    brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brandProar, brand2GE
+    brand1, brand2, brand3, logoAldeitas1, logoAldeitas2, brand5, brand6, brand7, brand8, brand9, brand10, brandProar, brand2GE, logoSexshop, logoAvalian, logoTot
 ];
 
 const ease = [0.22, 1, 0.36, 1];
