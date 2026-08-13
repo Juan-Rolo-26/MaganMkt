@@ -15,13 +15,14 @@ import brand8 from '../assets/images/marcas (78).png';
 import brand9 from '../assets/images/marcas (79).png';
 import brand10 from '../assets/images/marcas (80).png';
 import brandProar from '../assets/images/ProAr.png';
-import brand2GE from '../assets/images/2GE.png';
+import brand2GE from '../assets/logos/2ge.png';
 
 import logoSexshop from "../assets/logos/sexshop.png";
 import logoAvalian from "../assets/logos/avalian.png";
 import logoTot from "../assets/logos/tot.png";
 import logoAldeitas1 from "../assets/logos/aldeitas1.png";
 import logoAldeitas2 from "../assets/logos/aldeitas2.png";
+import logoItalmedica from "../assets/logos/Italmédica.png";
 
 const brands = [
     { img: brand1, nombre: "Golf Argentino Store", casoId: 1 },
@@ -40,6 +41,7 @@ const brands = [
     { img: logoSexshop, nombre: "Club A Sexshop", casoId: 13 },
     { img: logoAvalian, nombre: "Avalian", casoId: 14 },
     { img: logoTot, nombre: "TOT", casoId: 15 },
+    { img: logoItalmedica, nombre: "Italmédica", casoId: 16 },
 ];
 
 const steps = [

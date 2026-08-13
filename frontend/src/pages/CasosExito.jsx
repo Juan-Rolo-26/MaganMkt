@@ -13,7 +13,7 @@ import logoNimmus from "../assets/images/marcas (78).png";
 import logoImpacto from "../assets/images/marcas (79).png";
 import logoAmes from "../assets/images/marcas (80).png";
 import logoProar from "../assets/images/ProAr.png";
-import logo2GE from "../assets/images/2GE.png";
+import logo2GE from "../assets/logos/2ge.png";
 
 // Nuevos logos
 import logoSexshop from "../assets/logos/sexshop.png";
@@ -21,6 +21,7 @@ import logoAvalian from "../assets/logos/avalian.png";
 import logoTot from "../assets/logos/tot.png";
 import logoAldeitas1 from "../assets/logos/aldeitas1.png";
 import logoAldeitas2 from "../assets/logos/aldeitas2.png";
+import logoItalmedica from "../assets/logos/Italmédica.png";
 
 import { DIEGO_BALLERINI_MEETING_URL } from "../constants/links";
 
@@ -209,7 +210,7 @@ const casos = [
     },
     {
         id: 16,
-        logo: null,
+        logo: logoItalmedica,
         iniciales: "IM",
         nombre: "Italmédica",
         sector: "Salud",

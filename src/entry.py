@@ -123,4 +123,4 @@ async def on_fetch(request, env):
     </html>
     """
     
-    return Response.new(html_content, headers={"Content-Type": "text/html; charset=utf-8"})
+    return Response.new(html_content, headers=[["Content-Type", "text/html; charset=utf-8"]])
