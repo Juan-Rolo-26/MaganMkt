@@ -19,7 +19,7 @@ import logoAvalian from "../assets/logos/avalian.png";
 import logoTot from "../assets/logos/tot.png";
 import logoAldeitas1 from "../assets/logos/aldeitas1.png";
 import logoAldeitas2 from "../assets/logos/aldeitas2.png";
-import logoItalmedica from "../assets/logos/Italmédica.png";
+import logoItalmedica from "../assets/logos/Italmedica.png";
 
 const brands = [
     brand1, brand2, brand3, logoAldeitas1, logoAldeitas2, brand5, brand6, brand7, brand8, brand9, brand10, brandProar, brand2GE, logoSexshop, logoAvalian, logoTot, logoItalmedica

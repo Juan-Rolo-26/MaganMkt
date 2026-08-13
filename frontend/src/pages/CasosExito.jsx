@@ -21,7 +21,7 @@ import logoAvalian from "../assets/logos/avalian.png";
 import logoTot from "../assets/logos/tot.png";
 import logoAldeitas1 from "../assets/logos/aldeitas1.png";
 import logoAldeitas2 from "../assets/logos/aldeitas2.png";
-import logoItalmedica from "../assets/logos/Italmédica.png";
+import logoItalmedica from "../assets/logos/Italmedica.png";
 
 import { DIEGO_BALLERINI_MEETING_URL } from "../constants/links";
 
